@@ -1,0 +1,78 @@
+@use '../../styles/abstracts' as *;
+
+.cds-stepper {
+  display: flex;
+  margin: 0; padding: 0;
+  list-style: none;
+}
+
+.cds-stepper__step {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  gap: var(--cds-space-12);
+  min-width: 0;
+
+  &--clickable { cursor: pointer; }
+}
+
+.cds-stepper__marker {
+  @include flex-center;
+  width: 32px; height: 32px;
+  flex: none;
+  border-radius: 50%;
+  border: 2px solid var(--cds-border);
+  background: var(--cds-surface);
+  color: var(--cds-text-tertiary);
+  font-family: var(--cds-font-family-semibold);
+  font-weight: var(--cds-weight-semibold);
+  font-size: var(--cds-font-size-sm);
+  z-index: 1;
+}
+
+.cds-stepper__text { display: flex; flex-direction: column; min-width: 0; }
+.cds-stepper__label { @include label-md; color: var(--cds-text-tertiary); @include truncate; }
+.cds-stepper__desc { @include body-sm; color: var(--cds-text-tertiary); @include truncate; }
+
+.cds-stepper__line {
+  position: absolute;
+  top: 16px; left: 32px; right: calc(-1 * var(--cds-space-12));
+  height: 2px;
+  background: var(--cds-border);
+  z-index: 0;
+}
+
+// states
+.cds-stepper__step--complete {
+  .cds-stepper__marker { background: var(--cds-color-primary); border-color: var(--cds-color-primary); color: #fff; }
+  .cds-stepper__label { color: var(--cds-text-secondary); }
+  .cds-stepper__line { background: var(--cds-color-primary); }
+}
+.cds-stepper__step--current {
+  .cds-stepper__marker { border-color: var(--cds-color-primary); color: var(--cds-color-primary); }
+  .cds-stepper__label { color: var(--cds-text-primary); font-family: var(--cds-font-family-semibold); font-weight: var(--cds-weight-semibold); }
+}
+
+// Vertical orientation — stacked steps with a connector running down the markers.
+.cds-stepper--vertical {
+  flex-direction: column;
+  align-items: stretch;
+
+  .cds-stepper__step {
+    flex: none;
+    align-items: flex-start;
+    padding-bottom: var(--cds-space-20);
+  }
+  .cds-stepper__text { padding-top: var(--cds-space-4); }
+
+  .cds-stepper__line {
+    top: 32px;
+    bottom: calc(-1 * var(--cds-space-4));
+    left: 15px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+  .cds-stepper__step:last-child { padding-bottom: 0; }
+}

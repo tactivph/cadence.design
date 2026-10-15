@@ -1,0 +1,34 @@
+// =============================================================================
+// Cadence UI — Base/reset. Light-touch global defaults layered on top of
+// Bootstrap's Reboot. Sets the root font size (14px like PDO) and base type.
+// =============================================================================
+@use '../abstracts' as *;
+
+:root {
+  font-size: 14px; // PDO parity: 1rem = 14px
+}
+
+body {
+  font-family: var(--cds-font-family-base);
+  letter-spacing: var(--cds-letter-spacing-base);
+  color: var(--cds-text-primary);
+  background: var(--cds-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include body-md;
+}
+
+// Brand/display headings use Hyogo where desired via `.font-display`.
+.font-display { font-family: var(--cds-font-family-display); }
+
+a { color: var(--cds-text-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+// Form controls reset letter-spacing to `normal` in the UA stylesheet; PDO keeps
+// the tightened base tracking on buttons, inputs and tabs. Inherit it back so
+// interactive controls match body text (parity: letter-spacing -0.3px).
+button, input, select, textarea, [role='tab'] { letter-spacing: inherit; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+img { object-fit: cover; }

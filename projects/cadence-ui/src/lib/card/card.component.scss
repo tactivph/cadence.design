@@ -1,0 +1,35 @@
+@use '../../styles/abstracts' as *;
+
+:host {
+  display: block;
+  background: var(--cds-surface);
+  border: 1px solid var(--cds-border-subtle);
+  border-radius: var(--cds-radius-md);
+  box-shadow: var(--cds-shadow-xs);
+  overflow: hidden;
+}
+
+.cds-card__body { padding: var(--cds-space-20); }
+:host.cds-card--flush .cds-card__body { padding: 0; }
+
+:host.cds-card--interactive {
+  cursor: pointer;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  &:hover { box-shadow: var(--cds-shadow-md); border-color: var(--cds-border); }
+  &:active { transform: translateY(1px); }
+  &:focus-visible { @include focus-ring; }
+}
+
+::ng-deep [cds-card-header] {
+  display: block;
+  padding: var(--cds-space-16) var(--cds-space-20);
+  border-bottom: 1px solid var(--cds-border-subtle);
+  font-family: var(--cds-font-family-semibold);
+  font-weight: var(--cds-weight-semibold);
+}
+::ng-deep [cds-card-footer] {
+  display: block;
+  padding: var(--cds-space-16) var(--cds-space-20);
+  border-top: 1px solid var(--cds-border-subtle);
+  background: var(--cds-surface-subtle);
+}

@@ -1,0 +1,10 @@
+@if (loading) {
+  <span class="cds-btn__spinner" aria-hidden="true"></span>
+}
+@if (iconLeft && !loading) {
+  <i class="cds-btn__icon {{ iconLeft }}" aria-hidden="true"></i>
+}
+<ng-content></ng-content>
+@if (iconRight) {
+  <i class="cds-btn__icon {{ iconRight }}" aria-hidden="true"></i>
+}

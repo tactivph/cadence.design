@@ -1,0 +1,14 @@
+@use '../../styles/abstracts' as *;
+
+:host { display: inline-flex; }
+
+.cds-spinner__ring {
+  display: inline-block;
+  border-style: solid;
+  border-color: var(--cds-border);
+  border-top-color: var(--cds-color-primary);
+  border-radius: 50%;
+  animation: cds-spin .7s linear infinite;
+}
+
+@keyframes cds-spin { to { transform: rotate(360deg); } }

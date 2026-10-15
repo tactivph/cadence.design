@@ -1,0 +1,200 @@
+// =============================================================================
+// Cadence UI — Design tokens (SINGLE SOURCE OF TRUTH)
+// Consolidated & de-duplicated from the PDO codebase.
+// Primitive palettes + scales only. Semantic roles are derived in _css-vars.scss
+// and exposed as CSS custom properties so the app can re-theme at runtime.
+//
+// DRY rule: nothing in this library hardcodes a hex/size. Everything references
+// these maps (build-time) or the CSS variables they generate (runtime).
+// =============================================================================
+@use 'functions' as fn;
+
+// -----------------------------------------------------------------------------
+// 1. COLOR PRIMITIVES
+// -----------------------------------------------------------------------------
+
+// Brand / primary (PDO green — base is 600 #099250)
+$primary: (
+  25:  #f6fef9,
+  50:  #edfcf2,
+  100: #d3f8df,
+  200: #aaf0c4,
+  300: #73e2a3,
+  400: #3ccb7f,
+  500: #16b364,
+  600: #099250, // brand base
+  700: #087443,
+  800: #05603a,
+  900: #014d31,
+);
+
+// Neutral / gray ramp (consolidated from PDO's many gray families)
+$gray: (
+  0:   #ffffff,
+  25:  #fcfcfd,
+  50:  #f9fafb,
+  100: #f2f4f7,
+  200: #eaecf0,
+  300: #d0d5dd,
+  400: #98a2b3,
+  500: #667085,
+  600: #475467,
+  700: #344054,
+  800: #1d2939,
+  900: #101828,
+  1000: #000000,
+);
+
+$success: (
+  50: #ecfdf3, 100: #d1fadf, 200: #a6f4c5, 300: #6ce9a6,
+  400: #32d583, 500: #12b76a, 600: #039855, 700: #027a48, 900: #054f31,
+);
+
+$warning: (
+  50: #fffaeb, 100: #fef0c7, 200: #fedf89,
+  400: #fdb022, 500: #f79009, 600: #dc6803, 700: #b54708,
+);
+
+$danger: (
+  25: #fffbfa, 50: #fef3f2, 100: #fee4e2, 200: #fecdca,
+  400: #f97066, 500: #f04438, 600: #d92d20, 700: #b42318,
+);
+
+$info: (
+  25: #f5faff, 50: #eff8ff, 100: #d1e9ff, 200: #b2ddff,
+  500: #2e90fa, 600: #1570ef, 700: #175cd3, 800: #1849a9, 900: #194185,
+);
+
+// Accent families used by tags/badges across PDO (property-tag, agent-type-tag…)
+$accent: (
+  violet-100:   #ece9fe, violet-800:   #5720b7,
+  pink-100:     #fce7f6, pink-800:     #9e165f,
+  orange-100:   #fdead7, orange-500:   #ef6820, orange-800: #932f19,
+  tangerine-100:#fef0c7, tangerine-800:#93370d,
+  blue-100:     #d1e9ff, blue-800:     #194185,
+  grayblue-100: #eaecf5, grayblue-800: #293056,
+  slate-700:    #3d4a5c,
+  gray-100:     #f2f4f7, gray-700:     #344054,
+);
+
+// -----------------------------------------------------------------------------
+// 2. TYPOGRAPHY  (base = 14px, matches PDO `torem`)
+// -----------------------------------------------------------------------------
+// PDO renders text with PER-WEIGHT NAMED font families — the visual weight is
+// baked into the family NAME and the numeric font-weight is mostly left at 400.
+// The ROOT (app-root / body) computes to the single base family "Inter Regular";
+// emphasized roles swap the family NAME (not just the numeric weight). So each
+// weight role carries BOTH a family name and a numeric weight (see $font-families
+// + $font-weights, applied together by the `font-weight`/`type` mixins).
+$font-primary: 'Inter Regular';                          // base root family
+$font-display: ('Hyogo', 'Inter Regular', sans-serif);   // F2 — display/brand
+// TRUE SemiBold face (PDO `$F1-SemiBold`). The `semibold` ROLE below resolves to
+// the Medium face (reference-wins for most headings), so this standalone token is
+// the genuine SemiBold family for the few elements PDO renders in it — e.g. the
+// table / empty-state `h4` title (`styles/components/_tables.scss` `.labels h4`).
+$font-semibold-face: 'Inter SemiBold';
+
+// weight-role → PDO family NAME (reference-wins; confirmed against parity report)
+//   regular  → "Inter Regular"
+//   medium   → "Inter Medium"
+//   semibold → "Inter Medium"  (PDO renders emphasized section headings in the
+//              Medium face: the report shows 57 "Inter Medium" vs only 5
+//              "Inter SemiBold" for these elements — reference wins over the
+//              role's historical name. "Inter SemiBold" face stays registered.)
+//   bold     → "Inter Bold"
+$font-families: (
+  regular:  'Inter Regular',
+  medium:   'Inter Medium',
+  semibold: 'Inter Medium',
+  bold:     'Inter Bold',
+);
+
+// weight-role → numeric font-weight PDO actually DECLARES (mostly 400).
+//   medium labels compute to 400; emphasized headings (the "semibold" role)
+//   compute to ~500 in the reference — confirmed against the report's groups.
+$font-weights: (regular: 400, medium: 400, semibold: 500, bold: 700);
+
+// Global base letter-spacing — PDO renders body text slightly tightened.
+$letter-spacing-base: -0.3px;
+
+// Type scale (px → rem). Mirrors PDO $size-base-*.
+$font-sizes: (
+  xs:  fn.torem(11),
+  sm:  fn.torem(12),
+  md:  fn.torem(14), // base
+  lg:  fn.torem(16),
+  xl:  fn.torem(18),
+  2xl: fn.torem(20),
+  3xl: fn.torem(22),
+  4xl: fn.torem(25),
+  5xl: fn.torem(28),
+);
+
+$line-heights: (
+  xs:  fn.torem(13),
+  14:  fn.torem(14), // PDO $line-height-label-14 (stat labels, chart subtitles)
+  sm:  fn.torem(16),
+  18:  fn.torem(18), // PDO $line-height-body-18 (chart axis / conversions legend)
+  19:  fn.torem(19), // PDO $line-height-label-19 (chart/card titles)
+  md:  fn.torem(21),
+  lg:  fn.torem(24),
+  xl:  fn.torem(26),
+  2xl: fn.torem(30),
+  3xl: fn.torem(33),
+);
+
+// -----------------------------------------------------------------------------
+// 3. SPACING  (PDO spacing scale)
+// -----------------------------------------------------------------------------
+$spacing: (
+  0:   0,
+  2:   fn.torem(2),
+  4:   fn.torem(4),
+  6:   fn.torem(6),
+  7:   fn.torem(7),
+  8:   fn.torem(8),
+  10:  fn.torem(10),
+  11:  fn.torem(11),
+  12:  fn.torem(12),
+  14:  fn.torem(14),
+  16:  fn.torem(16),
+  20:  fn.torem(20),
+  24:  fn.torem(24),
+  30:  fn.torem(30),
+  32:  fn.torem(32),
+  40:  fn.torem(40),
+  48:  fn.torem(48),
+  64:  fn.torem(64),
+);
+
+// -----------------------------------------------------------------------------
+// 4. RADII / BORDERS
+// -----------------------------------------------------------------------------
+$radii: (
+  xs:   4px,
+  sm:   8px,
+  md:   12px,
+  lg:   16px,
+  xl:   24px,
+  pill: 100px,
+);
+
+// -----------------------------------------------------------------------------
+// 5. SHADOWS  (PDO elevation)
+// -----------------------------------------------------------------------------
+$shadows: (
+  xs: (0px 1px 2px 0px rgba(16, 24, 40, 0.05)),
+  sm: (0px 1px 3px 0px rgba(16, 24, 40, 0.1), 0px 1px 2px 0px rgba(16, 24, 40, 0.06)),
+  md: (0px 2px 4px -2px rgba(16, 24, 40, 0.06), 0px 4px 8px -2px rgba(16, 24, 40, 0.1)),
+  lg: (0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)),
+  xl: (0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03)),
+);
+
+// -----------------------------------------------------------------------------
+// 6. SIZES (avatars, controls, z-index, breakpoints)
+// -----------------------------------------------------------------------------
+$avatar-sizes: (xxs: fn.torem(18), sm: fn.torem(24), md: fn.torem(32), lg: fn.torem(48));
+
+$breakpoints: (sm: 576px, md: 768px, lg: 1024px, xl: 1920px, xxl: 2560px);
+
+$z-index: (dropdown: 1000, sticky: 1020, fixed: 1030, modal-backdrop: 1040, modal: 1050, popover: 1060, tooltip: 1070, toast: 1080);

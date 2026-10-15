@@ -1,0 +1,47 @@
+// =============================================================================
+// Cadence UI — Font faces  (Inter + Hyogo, the exact PDO typefaces)
+// Font files ship with the package under `assets/fonts`. The consuming app
+// copies them via an angular.json assets glob (see README). Override the path
+// before importing the theme if your app serves them elsewhere:
+//     $cds-font-path: '/my/path';  @use '@tactivstudios/cadence-ui/styles/theme';
+// PDO parity: each Inter weight is a SEPARATELY NAMED family ("Inter Regular",
+// "Inter Medium", "Inter SemiBold", "Inter Bold") with the visual weight baked
+// into the family NAME and numeric font-weight left at 400 — mirroring how the
+// PDO reference actually computes font-family/font-weight. One face per family.
+// =============================================================================
+
+$cds-font-path: '/assets/fonts' !default;
+
+// Inter (F1) — UI typeface. One named family per weight; each declared at 400.
+@font-face {
+  font-family: 'Inter Regular';
+  src: url('#{$cds-font-path}/Inter/Inter-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Medium';
+  src: url('#{$cds-font-path}/Inter/Inter-Medium.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Inter SemiBold';
+  src: url('#{$cds-font-path}/Inter/Inter-SemiBold.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Bold';
+  src: url('#{$cds-font-path}/Inter/Inter-Bold.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
+// Hyogo (F2) — display / brand typeface
+@font-face {
+  font-family: 'Hyogo';
+  src: url('#{$cds-font-path}/Hyogo/Hyogo-regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Hyogo';
+  src: url('#{$cds-font-path}/Hyogo/Hyogo-Black.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}

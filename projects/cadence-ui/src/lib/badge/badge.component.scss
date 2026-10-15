@@ -1,0 +1,115 @@
+@use 'sass:map';
+@use '../../styles/abstracts' as *;
+
+// PDO pill: 8px radius, Inter Medium, fixed height, soft tone fill.
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  // PDO pill box-model (reference-wins): 8px gap, no border, Medium face @ 500,
+  // 1.2 line-height, centered text, 4px vertical breathing room.
+  gap: var(--cds-space-8);
+  width: fit-content;
+  border: 0;
+  border-radius: var(--cds-radius-sm);
+  font-family: var(--cds-font-family-medium);
+  font-weight: var(--cds-weight-semibold);
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+// ── Sizes (PDO badge-sm/md/lg + tag height) ──────────────────────────────────
+:host.cds-badge--sm { min-height: torem(20); padding: var(--cds-space-4) var(--cds-space-8);  font-size: var(--cds-font-size-xs); }
+:host.cds-badge--md { min-height: torem(22); padding: var(--cds-space-4) var(--cds-space-8);  font-size: var(--cds-font-size-sm); }
+:host.cds-badge--lg { min-height: torem(22); padding: var(--cds-space-4) var(--cds-space-8); font-size: torem(13); }
+
+.cds-badge__dot  { width: .5em; height: .5em; border-radius: 50%; background: currentColor; }
+.cds-badge__icon { font-size: 1.05em; line-height: 1; }
+
+// ── Tone palette (SINGLE source — soft fg/bg pairs, all token-driven) ────────
+// Mirrors PDO's badge/lead-tag/status-badge colours without the bespoke classes.
+$badge-tones: (
+  neutral:   (bg: map.get($gray, 100),              fg: map.get($gray, 800)),
+  muted:     (bg: map.get($gray, 50),               fg: map.get($gray, 600)),
+  success:   (bg: map.get($success, 100),           fg: map.get($primary, 800)),
+  primary:   (bg: map.get($info, 100),              fg: map.get($info, 700)),
+  info:      (bg: map.get($info, 50),               fg: map.get($info, 700)),
+  danger:    (bg: map.get($danger, 100),            fg: map.get($danger, 700)),
+  warning:   (bg: map.get($accent, orange-100),     fg: map.get($accent, orange-800)),
+  seasoning: (bg: map.get($accent, violet-100),     fg: map.get($accent, violet-800)),
+  homeowner: (bg: map.get($accent, tangerine-100),  fg: map.get($accent, tangerine-800)),
+  takeout:   (bg: map.get($accent, pink-100),       fg: map.get($accent, pink-800)),
+  forfeited: (bg: map.get($accent, grayblue-100),   fg: map.get($accent, grayblue-800)),
+);
+
+@each $tone, $pair in $badge-tones {
+  :host.cds-badge--#{$tone} {
+    color: map.get($pair, fg);
+    background: map.get($pair, bg);
+    &.cds-badge--outline { background: transparent; border: 1px solid currentColor; }
+    &.cds-badge--solid   { color: #fff; background: map.get($pair, fg); }
+  }
+}
+
+// ── Softer shade (role / user-status pills) ──────────────────────────────────
+// PDO renders the Active/Inactive pills a shade lighter than the lead-tags:
+// success → success-700 on primary-50; danger → danger-700 on danger-50.
+$badge-softer: (
+  success: (bg: map.get($primary, 50), fg: map.get($success, 700)),
+  danger:  (bg: map.get($danger, 50),  fg: map.get($danger, 700)),
+);
+@each $tone, $pair in $badge-softer {
+  :host.cds-badge--softer.cds-badge--#{$tone} {
+    color: map.get($pair, fg);
+    background: map.get($pair, bg);
+  }
+}
+
+// PDO "property premium" solid tag — brand green fill (primary-600) on gray-25.
+// Reference-wins: the premium tag uses the Regular face (not the pill's Medium)
+// and 10px side padding (vs the shared 8px).
+:host.cds-badge--solid.cds-badge--success {
+  color: map.get($gray, 25);
+  background: map.get($primary, 600);
+  font-family: var(--cds-font-family-regular);
+  padding-inline: var(--cds-space-10);
+}
+
+// ── Shape (corner radius per badge family) ───────────────────────────────────
+:host.cds-badge--shape-rounded { border-radius: var(--cds-radius-sm); }
+:host.cds-badge--shape-pill    { border-radius: var(--cds-radius-pill); }
+
+// ── Bare (inline status mention, no pill chrome) ─────────────────────────────
+// PDO renders an inline status word (e.g. the "Signed CAS" in a hint sentence)
+// as plain emphasized text, not a filled pill — reference-wins.
+:host.cds-badge--bare {
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  gap: normal;
+  min-height: 0;
+  line-height: 1;
+  text-align: start;
+}
+
+// ── Text-tone (PDO "agent-type-tag": coloured text + optional dot, no chrome) ─
+// Reference-wins: PDO renders the type tag as plain TONE-COLOURED text — the
+// tone foreground tints the word (and, via currentColor, the leading dot), with
+// NO fill, border, radius or padding. Unlike `bare`, text KEEPS the tone colour
+// and inherits the host cell's line-height (≈24px) rather than forcing 1.
+:host.cds-badge--text {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  gap: normal;
+  min-height: 0;
+  line-height: inherit;
+  text-align: start;
+}
+// PDO's "Project Specialist" type tag resolves info to the deeper info-800
+// (#1849a9), so both the text and the currentColor dot match the reference.
+:host.cds-badge--text.cds-badge--info { color: map.get($info, 800); }

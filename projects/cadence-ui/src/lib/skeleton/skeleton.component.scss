@@ -1,0 +1,23 @@
+@use '../../styles/abstracts' as *;
+
+:host {
+  display: block;
+  border-radius: var(--cds-radius-sm);
+  background: linear-gradient(90deg,
+    var(--cds-gray-100) 25%,
+    var(--cds-gray-200) 37%,
+    var(--cds-gray-100) 63%);
+  background-size: 400% 100%;
+  animation: cds-shimmer 1.4s ease infinite;
+}
+
+:host.cds-skeleton--circle { border-radius: 50%; }
+
+@keyframes cds-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host { animation: none; }
+}

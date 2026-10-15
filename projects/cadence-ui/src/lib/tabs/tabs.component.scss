@@ -1,0 +1,75 @@
+@use '../../styles/abstracts' as *;
+
+:host { display: block; }
+
+.cds-tabs__list {
+  display: flex;
+  gap: var(--cds-space-4);
+  border-bottom: 1px solid var(--cds-border-subtle);
+  overflow-x: auto;
+}
+
+.cds-tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  // PDO nav-tab (reference-wins): 8/24 padding, 4px gap, top-rounded, left-aligned
+  // label at md line-height; inactive = near-black text, no underline.
+  gap: var(--cds-space-4);
+  padding: var(--cds-space-8) var(--cds-space-24);
+  border: 0;
+  border-radius: var(--cds-radius-tab) var(--cds-radius-tab) 0 0;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: start;
+  color: var(--cds-text-primary);
+  @include type(md, medium, md);
+  // reference-wins: PDO nav-tabs sit flush with the list border (no -1px pull-up).
+  margin-bottom: 0;
+  transition: color .15s ease, border-color .15s ease;
+
+  &:hover { color: var(--cds-text-primary); }
+  // reference-wins: PDO active nav-tab carries the white body background ($white).
+  &--active { color: var(--cds-gray-1000); background: var(--cds-surface); border-bottom: 2px solid var(--cds-primary-500); }
+  &:focus-visible { @include focus-ring; border-radius: var(--cds-radius-xs); }
+}
+
+// ---- Plain variant (PDO secondary filter: bare centered text) --------------
+// reference-wins: PDO renders the calendar "Incomplete/Completed" filter as
+// plain <span>s — transparent bg, no underline chrome, no radius/padding, gap
+// normal, centered, Inter Regular family at weight 500 (PDO's regular-face /
+// 500-weight pairing), gray-900 text. Active differs by nothing visible in the
+// reference, so it inherits the same plain text treatment.
+:host(.cds-tabs--plain) {
+  .cds-tabs__list {
+    border-bottom: 0;
+  }
+
+  .cds-tabs__tab {
+    gap: normal;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--cds-text-primary);
+    font-family: var(--cds-font-family-regular);
+    font-weight: var(--cds-weight-semibold);
+
+    &--active {
+      color: var(--cds-text-primary);
+      background: transparent; // plain filter stays bare — no white nav-tab fill
+      border-bottom: 0;
+    }
+  }
+}
+
+.cds-tabs__count {
+  @include label-xs;
+  padding: 0 var(--cds-space-6);
+  border-radius: var(--cds-radius-pill);
+  background: var(--cds-surface-muted);
+  color: var(--cds-text-secondary);
+}
+
+.cds-tabs__panels { padding-top: var(--cds-space-20); }

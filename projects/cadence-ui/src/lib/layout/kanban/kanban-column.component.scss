@@ -1,0 +1,67 @@
+@use '../../../styles/abstracts' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-width: 260px;
+  max-width: 300px;
+  flex: 1 1 260px;
+  background: var(--cds-surface);
+  border-radius: var(--cds-radius-md);
+  overflow: hidden;
+}
+
+// Green total bar — peso total on the left, count badge on the right (PDO).
+.cds-kanban-col__total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cds-space-8);
+  background: var(--cds-color-primary);
+  color: var(--cds-color-on-primary);
+  @include label-md;
+  padding: var(--cds-space-8) var(--cds-space-12);
+}
+.cds-kanban-col__peso { font-weight: var(--cds-weight-semibold); }
+
+// White pill count badge inside the green bar.
+.cds-kanban-col__total .cds-kanban-col__count {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 var(--cds-space-6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--cds-radius-pill);
+  background: var(--cds-color-on-primary);
+  color: var(--cds-color-primary);
+  @include label-xs;
+  font-weight: var(--cds-weight-semibold);
+}
+
+// Legacy header (no total) — title + muted count.
+.cds-kanban-col__header {
+  display: flex; align-items: center; gap: var(--cds-space-8);
+  padding: var(--cds-space-12) var(--cds-space-16);
+}
+.cds-kanban-col__count--muted {
+  @include label-xs;
+  padding: 0 var(--cds-space-6);
+  border-radius: var(--cds-radius-pill);
+  background: var(--cds-surface-muted);
+  color: var(--cds-text-tertiary);
+}
+
+.cds-kanban-col__title {
+  @include label-md;
+  color: var(--cds-text-primary);
+}
+
+.cds-kanban-col__body {
+  display: flex; flex-direction: column; gap: var(--cds-space-8);
+  padding: var(--cds-space-12) var(--cds-space-8);
+  overflow-y: auto;
+  min-height: 120px;
+}
+// When the body carries the stage title (total variant), give the title room.
+.cds-kanban-col__body .cds-kanban-col__title { padding: 0 var(--cds-space-4) var(--cds-space-4); }

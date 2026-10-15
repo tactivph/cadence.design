@@ -1,0 +1,156 @@
+@use '../../styles/abstracts' as *;
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cds-space-8);
+  width: fit-content;
+  margin: 0;
+  // PDO renders buttons border-less by default (border-width 0 / style none,
+  // border-color follows currentColor). Only the bordered variants below opt
+  // in to a real 1px border.
+  border: 0;
+  border-radius: var(--cds-control-radius);
+  font-family: var(--cds-font-family-medium);
+  font-weight: var(--cds-weight-medium);
+  // Line-height is size-scoped below (sm = 16px tight box; md/lg = 21px) to match
+  // PDO, which renders the larger controls with a taller line-box.
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease;
+  user-select: none;
+
+  &:focus-visible { @include focus-ring; }
+  &[disabled] { opacity: .5; cursor: not-allowed; pointer-events: none; }
+}
+
+// ---- Sizes (PDO: md = 40px is the list/table default) -----------------------
+:host.cds-btn--sm { height: var(--cds-control-height-sm); padding: 0 var(--cds-space-12); font-size: var(--cds-font-size-sm); line-height: var(--cds-line-height-sm); }
+:host.cds-btn--md { height: var(--cds-control-height-md); padding: var(--cds-space-8) var(--cds-space-20); font-size: var(--cds-font-size-md); line-height: var(--cds-line-height-md); }
+:host.cds-btn--lg { height: var(--cds-control-height-lg); padding: 0 var(--cds-space-20); font-size: var(--cds-font-size-lg); line-height: var(--cds-line-height-md); }
+
+:host.cds-btn--block { width: 100%; }
+:host.cds-btn--icon-only {
+  padding: 0;
+  aspect-ratio: 1;
+  &.cds-btn--sm { width: var(--cds-control-height-sm); }
+  &.cds-btn--md { width: var(--cds-control-height-md); }
+  &.cds-btn--lg { width: var(--cds-control-height-lg); }
+  // Icon-only buttons carry no projected text, so there is no label to hide.
+}
+
+.cds-btn__icon { font-size: 1.15em; line-height: 1; display: inline-flex; }
+// Label text is projected directly into the button so the parity matcher aligns
+// the text's nearest element with the :host button (no text-bearing wrapper).
+// Dim the whole control while loading (the spinner + text together).
+:host.cds-btn--loading { opacity: .75; }
+
+// ---- Variants (token-driven, matched to PDO .btn-*) -------------------------
+// Primary — solid green
+:host.cds-btn--primary {
+  background: var(--cds-color-primary);
+  color: var(--cds-color-on-primary);
+  &:hover:not([disabled])  { background: var(--cds-color-primary-hover); }
+  &:active:not([disabled]) { background: var(--cds-color-primary-active); }
+  // PDO disabled buttons keep the gray-300 fill at Bootstrap's default 0.65 opacity.
+  &[disabled] { background: var(--cds-border); opacity: .65; color: #fff; }
+}
+
+// Link — padding-less green text link (PDO inline .btn action, e.g. "Edit profile").
+// No fill/border, zero padding (overrides the size padding), and the taller 24px
+// line-box PDO renders for these inline links. Font follows the shared Inter
+// Medium face from :host. Hover reuses the ghost tint.
+:host.cds-btn--link {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--cds-color-primary);
+  line-height: var(--cds-line-height-lg);
+  &:hover:not([disabled])  { background: var(--cds-primary-25); }
+}
+
+// Secondary — light-green outline (PDO .btn-secondary)
+:host.cds-btn--secondary {
+  background: var(--cds-primary-25);
+  color: var(--cds-primary-700);
+  border: 1px solid var(--cds-primary-300);
+  &:hover:not([disabled])  { background: var(--cds-primary-100); }
+}
+
+// Secondary-neutral — gray fill, 1px neutral border (PDO .btn-secondary-neutral)
+:host.cds-btn--secondary-neutral {
+  background: var(--cds-gray-25);
+  color: var(--cds-text-body);
+  border: 1px solid var(--cds-border-neutral);
+  &:hover:not([disabled])  { background: var(--cds-surface-muted); }
+}
+
+// Tertiary — green text, no fill
+:host.cds-btn--tertiary {
+  background: transparent;
+  color: var(--cds-primary-700);
+  &:hover:not([disabled])  { background: var(--cds-primary-25); }
+}
+
+// Ghost — borderless green text (PDO .btn-ghost)
+:host.cds-btn--ghost {
+  background: transparent;
+  color: var(--cds-primary-700);
+  &:hover:not([disabled])  { background: var(--cds-primary-25); }
+}
+
+:host.cds-btn--ghost-neutral {
+  background: transparent;
+  color: var(--cds-text-primary);
+  .cds-btn__icon, i { color: var(--cds-gray-600); }
+  &:hover:not([disabled])  { background: var(--cds-gray-50); }
+}
+
+// Danger — solid red
+:host.cds-btn--danger {
+  background: var(--cds-danger-600);
+  color: #fff;
+  &:hover:not([disabled])  { background: var(--cds-danger-700); }
+  &[disabled] { background: var(--cds-danger-200); opacity: 1; color: #fff; }
+}
+
+// Danger-ghost — red text
+:host.cds-btn--danger-ghost {
+  background: transparent;
+  color: var(--cds-danger-600);
+  &:hover:not([disabled])  { background: var(--cds-danger-50); }
+}
+
+// Danger-link — red inline text link, zero padding (PDO .btn-ghost.negative).
+// Mirrors `link` (transparent, borderless, padding-less) but in the danger tone,
+// keeping the size's line-box so inline red actions sit flush with the text.
+:host.cds-btn--danger-link {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--cds-danger-600);
+  &:hover:not([disabled])  { background: var(--cds-danger-50); }
+}
+
+// Light — gray-25 fill, body text, no border (PDO .btn-light cancel action).
+:host.cds-btn--light {
+  background: var(--cds-gray-25);
+  color: var(--cds-text-body);
+  &:hover:not([disabled])  { background: var(--cds-surface-muted); }
+}
+
+// Icon buttons: neutral icon, subtle hover (PDO .btn-icon)
+:host.cds-btn--icon-only.cds-btn--ghost,
+:host.cds-btn--icon-only.cds-btn--secondary-neutral { color: var(--cds-text-primary); }
+
+// ---- Loading spinner --------------------------------------------------------
+.cds-btn__spinner {
+  width: 1em; height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: cds-btn-spin .6s linear infinite;
+}
+@keyframes cds-btn-spin { to { transform: rotate(360deg); } }

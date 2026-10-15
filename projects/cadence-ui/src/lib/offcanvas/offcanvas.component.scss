@@ -1,0 +1,54 @@
+@use '../../styles/abstracts' as *;
+
+:host { display: contents; }
+
+.cds-offcanvas__backdrop {
+  position: fixed; inset: 0;
+  background: rgba(16, 24, 40, 0.6);
+  z-index: 1040;
+  animation: cds-fade .15s ease;
+}
+
+.cds-offcanvas__panel {
+  position: fixed;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  background: var(--cds-surface);
+  box-shadow: var(--cds-shadow-xl);
+
+  &--start, &--end { top: 0; bottom: 0; width: min(420px, 100vw); }
+  &--start { left: 0; animation: cds-slide-start .2s ease; }
+  &--end   { right: 0; animation: cds-slide-end .2s ease; }
+
+  &--top, &--bottom { left: 0; right: 0; height: min(60vh, 520px); }
+  &--top    { top: 0; animation: cds-slide-top .2s ease; }
+  &--bottom { bottom: 0; animation: cds-slide-bottom .2s ease; }
+}
+
+.cds-offcanvas__header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--cds-space-16);
+  padding: var(--cds-space-20) var(--cds-space-24);
+  border-bottom: 1px solid var(--cds-border-subtle);
+}
+.cds-offcanvas__title { @include heading-h5; margin: 0; }
+.cds-offcanvas__close {
+  border: 0; background: transparent; cursor: pointer; color: var(--cds-text-tertiary);
+  font-size: var(--cds-font-size-xl); line-height: 1; padding: var(--cds-space-4);
+  border-radius: var(--cds-radius-xs);
+  &:hover { color: var(--cds-text-primary); background: var(--cds-surface-subtle); }
+}
+.cds-offcanvas__body { padding: var(--cds-space-24); overflow-y: auto; flex: 1 1 auto; }
+.cds-offcanvas__footer {
+  display: flex; justify-content: flex-end; gap: var(--cds-space-8);
+  padding: var(--cds-space-16) var(--cds-space-24);
+  border-top: 1px solid var(--cds-border-subtle);
+  &:empty { display: none; }
+}
+
+@keyframes cds-fade { from { opacity: 0; } }
+@keyframes cds-slide-start  { from { transform: translateX(-100%); } }
+@keyframes cds-slide-end    { from { transform: translateX(100%); } }
+@keyframes cds-slide-top    { from { transform: translateY(-100%); } }
+@keyframes cds-slide-bottom { from { transform: translateY(100%); } }

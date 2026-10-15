@@ -1,0 +1,9 @@
+@use '../../styles/abstracts' as *;
+:host { display: block; width: 100%; }
+.cds-table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--cds-space-16);
+}
+.cds-table-pagination__info { margin: 0; color: var(--cds-text-tertiary); font-size: var(--cds-font-size-md); }

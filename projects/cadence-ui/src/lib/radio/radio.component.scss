@@ -1,0 +1,41 @@
+@use '../../styles/abstracts' as *;
+
+:host { display: inline-flex; }
+
+.cds-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cds-space-8);
+  cursor: pointer;
+  @include body-md;
+  &--disabled { cursor: not-allowed; opacity: .55; }
+}
+
+.cds-radio__native { position: absolute; opacity: 0; width: 0; height: 0; }
+
+.cds-radio__dot {
+  position: relative;
+  width: 18px; height: 18px;
+  flex: none;
+  border: 1px solid var(--cds-border-strong);
+  border-radius: 50%;
+  background: var(--cds-surface);
+  transition: border-color .12s ease;
+
+  &::after {
+    content: '';
+    position: absolute; inset: 0; margin: auto;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--cds-color-primary);
+    transform: scale(0);
+    transition: transform .12s ease;
+  }
+}
+
+.cds-radio__native:checked + .cds-radio__dot {
+  border-color: var(--cds-color-primary);
+  &::after { transform: scale(1); }
+}
+.cds-radio__native:focus-visible + .cds-radio__dot { @include focus-ring; }
+.cds-radio__label:empty { display: none; }

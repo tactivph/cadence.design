@@ -1,0 +1,17 @@
+@use '../../../styles/abstracts' as *;
+
+:host {
+  display: block;
+  background: var(--cds-surface);
+  border: 1px solid var(--cds-border-subtle);
+  border-radius: var(--cds-radius-sm);
+  padding: var(--cds-space-12);
+  box-shadow: var(--cds-shadow-xs);
+}
+
+:host.cds-kanban-card--interactive {
+  cursor: pointer;
+  transition: box-shadow .15s ease, border-color .15s ease;
+  &:hover { box-shadow: var(--cds-shadow-sm); border-color: var(--cds-border); }
+  &:focus-visible { @include focus-ring; }
+}

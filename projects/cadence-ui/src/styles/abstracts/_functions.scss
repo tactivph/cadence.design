@@ -1,0 +1,20 @@
+// =============================================================================
+// Cadence UI — SCSS functions
+// Pure helpers only. No output. Safe to @use from anywhere.
+// =============================================================================
+@use 'sass:math';
+@use 'sass:map';
+
+/// Convert a px value to rem, based on the 14px root (matches PDO).
+/// @example torem(16) => 1.1428571429rem
+@function torem($px, $base: 14) {
+  @return math.div($px, $base) * 1rem;
+}
+
+/// Safe map getter that errors loudly on a missing key.
+@function tget($map, $key) {
+  @if not map.has-key($map, $key) {
+    @error "Key `#{$key}` not found. Available: #{map.keys($map)}.";
+  }
+  @return map.get($map, $key);
+}

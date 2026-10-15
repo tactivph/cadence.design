@@ -1,0 +1,42 @@
+@use '../../../styles/abstracts' as *;
+
+:host { display: block; }
+
+// PDO .header — sticky white bar, brand left, pill nav centre, actions right.
+.cds-topnav {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cds-space-16);
+  max-width: torem(1920);
+  margin: 0 auto;
+  padding: var(--cds-space-16) var(--cds-space-24);
+  background: var(--cds-surface);
+}
+
+.cds-topnav__brand {
+  display: flex;
+  align-items: center;
+  img { max-width: torem(150); height: auto; }
+}
+
+// PDO .nav-controls — the rounded pill holding the links.
+.cds-topnav__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cds-space-8);
+  height: torem(49);
+  padding: var(--cds-space-8);
+  border-radius: var(--cds-radius-pill);
+  background: var(--cds-surface-pill);
+}
+
+.cds-topnav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-space-16);
+}

@@ -1,0 +1,14 @@
+@use '../../styles/abstracts' as *;
+.cds-loading-state {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--cds-space-16); text-align: center; padding: var(--cds-space-48) var(--cds-space-16);
+}
+.cds-loading-state__spinner {
+  width: torem(40); height: torem(40); border-radius: 50%;
+  border: 3px solid var(--cds-border-subtle); border-top-color: var(--cds-color-primary);
+  animation: cds-ls-spin .7s linear infinite;
+}
+@keyframes cds-ls-spin { to { transform: rotate(360deg); } }
+.cds-loading-state__text { display: flex; flex-direction: column; gap: var(--cds-space-2); }
+.cds-loading-state__title { margin: 0; @include body-lg; color: var(--cds-text-primary); }
+.cds-loading-state__subtitle { margin: 0; font-size: var(--cds-font-size-md); color: var(--cds-text-secondary); }

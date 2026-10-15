@@ -1,0 +1,44 @@
+{
+  "name": "@tactivstudios/cadence-ui",
+  "version": "0.1.0",
+  "description": "Cadence design system — Angular 22 presentational components + centralized SASS/Bootstrap styling. Styling & components only; wire behavior and data in the consuming app.",
+  "author": "Tactiv Studios",
+  "license": "UNLICENSED",
+  "keywords": [
+    "angular",
+    "design-system",
+    "components",
+    "bootstrap",
+    "sass",
+    "cadence"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tactivstudios/cadence-ui.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "@angular/forms": "^22.0.0",
+    "bootstrap": "^5.3.0",
+    "@phosphor-icons/web": "^2.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "exports": {
+    "./styles/theme": {
+      "sass": "./styles/theme.scss"
+    },
+    "./styles/theme.scss": {
+      "sass": "./styles/theme.scss"
+    },
+    "./styles/*": {
+      "sass": "./styles/*"
+    }
+  }
+}

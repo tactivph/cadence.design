@@ -1,0 +1,30 @@
+<style>
+  /*
+   * Mirror PDO's app-root on the measured Storybook mount (#storybook-root).
+   * Full-screen page stories render inside app-root in the real app, which is a
+   * flex column that GROWS to its content height and reports min-height:auto.
+   *
+   * Storybook's own sb-common stylesheet sets
+   *     .sb-show-main.sb-main-fullscreen { display: block }
+   * (specificity 0,2,0) on <body>. A plain `body.sb-main-fullscreen` rule
+   * (0,1,1) loses to it, so body stays display:block — which leaves
+   * #storybook-root a block box, not a flex item. For a non-flex-item,
+   * `min-height:auto` COMPUTES to 0px, so the measured root reported
+   * min-height:0px while the reference app-root reports min-height:auto.
+   *
+   * Match sb-common's specificity (0,2,1) so body becomes a flex column: that
+   * makes #storybook-root a flex item, so its min-height:auto now computes to
+   * "auto" and it grows to content height — identical to the reference app-root
+   * (display:flex, flex-direction:column, min-height:auto). Applies to every
+   * fullscreen page story at once; no per-story CSS.
+   */
+  body.sb-show-main.sb-main-fullscreen {
+    display: flex;
+    flex-direction: column;
+  }
+  body.sb-show-main.sb-main-fullscreen #storybook-root {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+</style>

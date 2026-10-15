@@ -1,0 +1,8 @@
+// =============================================================================
+// Cadence UI — Abstracts barrel
+// The ONLY thing a component SCSS needs:  @use '…/styles/abstracts' as *;
+// Forwards functions, tokens & mixins. Emits NO CSS.
+// =============================================================================
+@forward 'functions';
+@forward 'tokens';
+@forward 'mixins';

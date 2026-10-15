@@ -1,0 +1,16 @@
+@use '../../styles/abstracts' as *;
+:host { display: inline-flex; }
+.cds-temp {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: torem(22); padding: 0 var(--cds-space-8);
+  border-radius: var(--cds-radius-sm);
+  color: var(--cds-text-secondary);  // #344054
+  font-family: var(--cds-font-family-medium); font-weight: var(--cds-weight-medium);
+  font-size: torem(13); line-height: 1; white-space: nowrap;
+
+  &--hot     { background: var(--cds-danger-50); }   // #fef3f2
+  &--warm    { background: #fefbe8; }                // yellow-50 (PDO)
+  &--cold    { background: var(--cds-info-50); }     // #eff8ff
+  &--dormant { background: var(--cds-gray-50); }     // #f9fafb
+}
+.cds-temp__info { margin-left: var(--cds-space-4); font-size: 1em; cursor: help; color: inherit; }

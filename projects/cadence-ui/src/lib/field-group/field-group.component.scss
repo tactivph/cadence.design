@@ -1,0 +1,25 @@
+@use '../../styles/abstracts' as *;
+
+:host { display: block; }
+
+.cds-field-group__set { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+
+.cds-field-group__legend {
+  display: flex; align-items: baseline; gap: var(--cds-space-8);
+  padding: 0;
+  margin-bottom: var(--cds-space-16);
+  @include heading-h6;
+}
+.cds-field-group__hint { @include body-sm; color: var(--cds-text-tertiary); font-weight: var(--cds-weight-regular); }
+
+.cds-field-group__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-space-16);
+
+  &--row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    > * { flex: 1 1 220px; }
+  }
+}

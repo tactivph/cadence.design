@@ -1,0 +1,5 @@
+// Global component styles that are not tied to a single Angular component
+// (form controls, tables, …). @forward new global partials here.
+@forward 'forms';
+@forward 'tables';
+@forward 'layout';

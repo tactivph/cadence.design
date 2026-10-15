@@ -1,0 +1,33 @@
+// =============================================================================
+// Cadence UI — Typography utility classes (parity with PDO's global classes)
+// Generated from the mixins so there is ONE definition of each style.
+// =============================================================================
+@use '../abstracts' as *;
+
+.cds-h1 { @include heading-h1; }
+.cds-h2 { @include heading-h2; }
+.cds-h3 { @include heading-h3; }
+.cds-h4 { @include heading-h4; }
+.cds-h5 { @include heading-h5; }
+.cds-h6 { @include heading-h6; }
+
+.cds-label-lg { @include label-lg; }
+.cds-label-md { @include label-md; }
+.cds-label-sm { @include label-sm; }
+.cds-label-xs { @include label-xs; }
+
+.cds-body-lg { @include body-lg; }
+.cds-body-md { @include body-md; }
+.cds-body-sm { @include body-sm; }
+
+.cds-truncate { @include truncate; }
+.cds-overline { @include label-xs; text-transform: uppercase; letter-spacing: .04em; }
+
+// text color utilities mapped to semantic tokens
+.cds-text-primary   { color: var(--cds-text-primary); }
+.cds-text-secondary { color: var(--cds-text-secondary); }
+.cds-text-tertiary  { color: var(--cds-text-tertiary); }
+.cds-text-brand     { color: var(--cds-color-primary); }
+.cds-text-danger    { color: var(--cds-danger-600); }
+.cds-text-success   { color: var(--cds-success-600); }
+.cds-text-warning   { color: var(--cds-warning-700); }

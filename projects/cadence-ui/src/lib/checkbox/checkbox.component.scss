@@ -1,0 +1,41 @@
+@use '../../styles/abstracts' as *;
+
+:host { display: inline-flex; }
+
+.cds-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cds-space-8);
+  cursor: pointer;
+  @include body-md;
+  &--disabled { cursor: not-allowed; opacity: .55; }
+}
+
+.cds-checkbox__native {
+  position: absolute;
+  opacity: 0;
+  width: 0; height: 0;
+}
+
+.cds-checkbox__box {
+  @include flex-center;
+  width: 18px; height: 18px;
+  flex: none;
+  border: 1px solid var(--cds-border-strong);
+  border-radius: var(--cds-radius-xs);
+  background: var(--cds-surface);
+  color: #fff;
+  font-size: 12px;
+  transition: background .12s ease, border-color .12s ease;
+  i { line-height: 1; }
+}
+
+.cds-checkbox__native:checked + .cds-checkbox__box,
+.cds-checkbox__native:indeterminate + .cds-checkbox__box {
+  background: var(--cds-color-primary);
+  border-color: var(--cds-color-primary);
+}
+
+.cds-checkbox__native:focus-visible + .cds-checkbox__box { @include focus-ring; }
+
+.cds-checkbox__label:empty { display: none; }

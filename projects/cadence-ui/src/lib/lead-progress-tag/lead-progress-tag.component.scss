@@ -1,0 +1,12 @@
+@use '../../styles/abstracts' as *;
+:host { display: inline-flex; }
+.cds-lead-progress {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: torem(22); padding: 0 var(--cds-space-8);
+  border-radius: var(--cds-radius-sm);
+  background: var(--cds-accent-slate-700);
+  color: #fff;
+  font-family: var(--cds-font-family-medium); font-weight: var(--cds-weight-medium);
+  font-size: var(--cds-font-size-md); line-height: 1; white-space: nowrap;
+}
+.cds-lead-progress__empty { color: var(--cds-text-tertiary); }

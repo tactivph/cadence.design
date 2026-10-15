@@ -1,0 +1,23 @@
+@use '../../styles/abstracts' as *;
+
+:host { position: relative; display: inline-flex; }
+
+.cds-dropdown__trigger { display: inline-flex; }
+
+.cds-dropdown__menu {
+  position: absolute;
+  top: calc(100% + var(--cds-space-4));
+  min-width: 200px;
+  z-index: 1000;
+  padding: var(--cds-space-4);
+  background: var(--cds-surface);
+  border: 1px solid var(--cds-border-subtle);
+  border-radius: var(--cds-radius-md);
+  box-shadow: var(--cds-shadow-lg);
+  animation: cds-menu-in .12s ease;
+
+  &--start { left: 0; }
+  &--end { right: 0; }
+}
+
+@keyframes cds-menu-in { from { opacity: 0; transform: translateY(-4px); } }

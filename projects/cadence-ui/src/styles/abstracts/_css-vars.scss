@@ -1,0 +1,96 @@
+// =============================================================================
+// Cadence UI — CSS custom properties (runtime theme surface)
+// Emits every token as a `--cds-*` variable on :root, then layers SEMANTIC
+// aliases on top. The app re-brands by overriding the semantic aliases only
+// (e.g. `--cds-color-primary`) — no recompile needed.
+//
+// Call `@include cds-root-vars();` once, from the theme entry (theme.scss).
+// =============================================================================
+@use 'sass:map';
+@use 'sass:meta';
+@use 'tokens' as *;
+
+@mixin cds-root-vars {
+  :root {
+    // ---- Primitive palettes -------------------------------------------------
+    @each $k, $v in $primary  { --cds-primary-#{$k}: #{$v}; }
+    @each $k, $v in $gray     { --cds-gray-#{$k}: #{$v}; }
+    @each $k, $v in $success  { --cds-success-#{$k}: #{$v}; }
+    @each $k, $v in $warning  { --cds-warning-#{$k}: #{$v}; }
+    @each $k, $v in $danger   { --cds-danger-#{$k}: #{$v}; }
+    @each $k, $v in $info     { --cds-info-#{$k}: #{$v}; }
+    @each $k, $v in $accent   { --cds-accent-#{$k}: #{$v}; }
+
+    // ---- Scales -------------------------------------------------------------
+    @each $k, $v in $spacing  { --cds-space-#{$k}: #{$v}; }
+    @each $k, $v in $radii    { --cds-radius-#{$k}: #{$v}; }
+    @each $k, $v in $font-sizes { --cds-font-size-#{$k}: #{$v}; }
+    @each $k, $v in $line-heights { --cds-line-height-#{$k}: #{$v}; }
+    @each $k, $v in $shadows  { --cds-shadow-#{$k}: #{$v}; }
+    @each $k, $v in $font-weights { --cds-weight-#{$k}: #{$v}; }
+    // Per-weight-role family NAMES (PDO bakes weight into the family name).
+    // Paired with --cds-weight-* so a role emits the right family + numeric weight.
+    @each $k, $v in $font-families { --cds-font-family-#{$k}: #{meta.inspect($v)}; }
+
+    --cds-font-family-base: #{meta.inspect($font-primary)};
+    --cds-font-family-display: #{meta.inspect($font-display)};
+    // TRUE SemiBold face — distinct from the `semibold` ROLE (which = Inter Medium).
+    --cds-font-family-semibold-face: #{meta.inspect($font-semibold-face)};
+    --cds-letter-spacing-base: #{$letter-spacing-base};
+
+    // ---- SEMANTIC ALIASES (override these to re-theme) ----------------------
+    // Brand
+    --cds-color-primary:         var(--cds-primary-600);
+    --cds-color-primary-hover:   var(--cds-primary-700);
+    --cds-color-primary-active:  var(--cds-primary-800);
+    --cds-color-primary-subtle:  var(--cds-primary-50);
+    --cds-color-on-primary:      #ffffff;
+    --cds-surface-primary-heaviest: #095c37; // PDO nav active pill
+    --cds-surface-pill:             #f4f4f5; // PDO nav-controls pill bg
+
+    // Text
+    --cds-text-primary:   var(--cds-gray-900);
+    --cds-text-secondary: var(--cds-gray-700);
+    --cds-text-tertiary:  var(--cds-gray-400);
+    --cds-text-disabled:  var(--cds-gray-300);
+    --cds-text-link:      var(--cds-color-primary);
+    --cds-text-body:      #212529; // PDO Bootstrap body color (neutral buttons: .btn-secondary-neutral)
+    --cds-text-weekday:   #70707b; // PDO gray-iron-500 (zinc-500) — calendar weekday header / muted label
+
+    // Surfaces & borders
+    --cds-surface:          #ffffff;
+    --cds-surface-subtle:   var(--cds-gray-50);
+    --cds-surface-muted:    var(--cds-gray-100);
+    --cds-surface-inverse:  var(--cds-gray-900);
+    --cds-surface-remarks:  #f5f5f5; // PDO $gray-true-100 — income-calculator remarks / side card
+    --cds-border:           var(--cds-gray-300);
+    --cds-border-subtle:    var(--cds-gray-200);
+    --cds-border-strong:    var(--cds-gray-400);
+    --cds-border-neutral:   #bdbdbd; // PDO neutral-300 (secondary-border buttons)
+    --cds-border-table:     #e4e4e7; // PDO list-table row hairline (zinc-200)
+    --cds-border-grid:      #e9ecef; // PDO Bootstrap gray-200 — calendar day-cell gridlines
+    --cds-border-row:       #eff1f5; // PDO permission-row hairline (create-new-role .item divider)
+
+    // Status (foreground + soft background pairs)
+    --cds-status-success-fg: var(--cds-success-700);
+    --cds-status-success-bg: var(--cds-success-50);
+    --cds-status-warning-fg: var(--cds-warning-700);
+    --cds-status-warning-bg: var(--cds-warning-50);
+    --cds-status-danger-fg:  var(--cds-danger-700);
+    --cds-status-danger-bg:  var(--cds-danger-50);
+    --cds-status-info-fg:    var(--cds-info-700);
+    --cds-status-info-bg:    var(--cds-info-50);
+    --cds-status-neutral-fg: var(--cds-gray-700);
+    --cds-status-neutral-bg: var(--cds-gray-100);
+
+    // Focus ring
+    --cds-focus-ring: 0 0 0 4px #{rgba(map.get($primary, 600), 0.24)};
+
+    // Control defaults
+    --cds-control-height-sm: #{map.get($spacing, 32)};
+    --cds-control-height-md: #{map.get($spacing, 40)};
+    --cds-control-height-lg: #{map.get($spacing, 48)};
+    --cds-control-radius:    var(--cds-radius-sm);
+    --cds-radius-tab:        0.375rem; // PDO nav-tabs corner (Bootstrap $border-radius, 5.25px @14px root)
+  }
+}

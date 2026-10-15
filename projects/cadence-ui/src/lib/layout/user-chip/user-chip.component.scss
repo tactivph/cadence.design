@@ -1,0 +1,6 @@
+@use '../../../styles/abstracts' as *;
+:host { display: inline-flex; align-items: center; gap: var(--cds-space-8); cursor: pointer; }
+.cds-user-chip__labels { display: flex; flex-direction: column; line-height: 1.2; }
+.cds-user-chip__name { font-size: var(--cds-font-size-md); font-family: var(--cds-font-family-medium); font-weight: var(--cds-weight-medium); color: var(--cds-text-primary); letter-spacing: -0.28px; }
+.cds-user-chip__role { font-size: var(--cds-font-size-xs); color: var(--cds-text-tertiary); }
+.cds-user-chip__caret { display: inline-flex; align-items: center; justify-content: center; width: 40px; i { font-size: 16px; color: var(--cds-gray-600); } }

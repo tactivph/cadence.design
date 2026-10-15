@@ -1,0 +1,20 @@
+@use '../../styles/abstracts' as *;
+.cds-table-header {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cds-space-8);
+  color: var(--cds-text-secondary);
+  font-family: var(--cds-font-family-medium);
+  font-weight: var(--cds-weight-medium);
+  &--center { height: 100%; justify-content: center; }
+}
+.cds-table-header__sort {
+  display: inline-flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity .2s ease;
+  i { font-size: torem(13); color: var(--cds-border); line-height: .8; }
+  i.cds-active { color: var(--cds-text-primary); }
+  &:has(i.cds-active) { opacity: 1; }
+}
+th:hover .cds-table-header__sort { opacity: 1; }

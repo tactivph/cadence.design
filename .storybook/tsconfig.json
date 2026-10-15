@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": { "outDir": "../out-tsc/storybook", "types": ["node"] },
+  "include": [
+    "../projects/cadence-ui/src/**/*.stories.ts",
+    "./preview.ts"
+  ],
+  "exclude": ["../projects/cadence-ui/src/**/*.spec.ts"]
+}

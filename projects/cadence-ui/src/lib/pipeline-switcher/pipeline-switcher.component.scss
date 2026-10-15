@@ -1,0 +1,81 @@
+@use '../../styles/abstracts' as *;
+
+// PDO clients-pipeline switcher: two summary pills joined by a muted arrow.
+:host {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cds-space-12);
+  font-family: var(--cds-font-family-base);
+}
+
+// ── Pill ─────────────────────────────────────────────────────────────────────
+.cds-pl {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cds-space-10);
+  padding: var(--cds-space-10) var(--cds-space-12);
+  border: 1px solid var(--cds-border);          // neutral default (gray-300)
+  border-radius: var(--cds-radius-md);
+  background: var(--cds-surface);                // white default
+}
+
+// Leading square icon box
+.cds-pl__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: torem(24);
+  height: torem(24);
+  border-radius: var(--cds-radius-sm);
+  color: var(--cds-gray-600);                    // inactive glyph (#475467)
+  font-size: torem(14);
+  line-height: 1;
+}
+
+// Two-line label
+.cds-pl__label { display: inline-flex; flex-direction: column; gap: var(--cds-space-2); min-width: 0; }
+.cds-pl__title {
+  font-size: var(--cds-font-size-md);
+  font-family: var(--cds-font-family-semibold);
+  font-weight: var(--cds-weight-semibold);
+  line-height: 1.2;
+  color: var(--cds-text-primary);                // inactive title
+  white-space: nowrap;
+}
+.cds-pl__subtitle {
+  font-size: var(--cds-font-size-sm);
+  font-weight: var(--cds-weight-regular);
+  line-height: 1.2;
+  color: var(--cds-text-tertiary);
+  white-space: nowrap;
+}
+
+// Trailing count badge
+.cds-pl__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: torem(26);
+  height: torem(22);
+  padding: 0 var(--cds-space-8);
+  border-radius: var(--cds-radius-md);
+  background: var(--cds-surface-muted);          // neutral (gray-100)
+  color: var(--cds-text-secondary);
+  font-size: var(--cds-font-size-sm);
+  font-family: var(--cds-font-family-semibold);
+  font-weight: var(--cds-weight-semibold);
+  line-height: 1;
+}
+
+// Muted connector arrow
+.cds-pl__arrow { color: var(--cds-text-tertiary); font-size: torem(18); line-height: 1; }
+
+// ── Active state (green) ─────────────────────────────────────────────────────
+.cds-pl--active {
+  border-color: var(--cds-color-primary);        // #099250
+  background: var(--cds-primary-25);             // #f6fef9
+
+  .cds-pl__icon  { background: var(--cds-color-primary); color: var(--cds-color-on-primary); }
+  .cds-pl__title { color: var(--cds-color-primary); }
+  .cds-pl__count { background: var(--cds-success-100); color: var(--cds-primary-800); }
+}

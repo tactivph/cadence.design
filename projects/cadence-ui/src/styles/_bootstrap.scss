@@ -1,0 +1,45 @@
+// =============================================================================
+// Cadence UI — Bootstrap, themed from Cadence tokens (the DRY bridge)
+// Bootstrap's Sass variables are fed from the SAME token maps the components
+// use, so there is one source of truth for the whole system. Importing this
+// emits the themed Bootstrap CSS (reboot + grid + components + utilities).
+// =============================================================================
+@use 'sass:map';
+@use 'abstracts' as cds;
+
+@use 'bootstrap/scss/bootstrap' with (
+  // Brand palette → Bootstrap theme colors
+  $primary:   map.get(cds.$primary, 600),
+  $secondary: map.get(cds.$gray, 600),
+  $success:   map.get(cds.$success, 600),
+  $info:      map.get(cds.$info, 600),
+  $warning:   map.get(cds.$warning, 500),
+  $danger:    map.get(cds.$danger, 600),
+  $light:     map.get(cds.$gray, 50),
+  $dark:      map.get(cds.$gray, 900),
+
+  // Foundations
+  $body-color:   map.get(cds.$gray, 900),
+  $body-bg:      #ffffff,
+  $border-color: map.get(cds.$gray, 300),
+  $link-color:   map.get(cds.$primary, 600),
+  $link-hover-color: map.get(cds.$primary, 700),
+
+  // Type — 1rem resolves to 14px because :root is set to 14px (PDO parity)
+  $font-family-sans-serif: cds.$font-primary,
+  $font-size-base: 1rem,
+  // PDO bakes heading weight into the family name: emphasized headings render in
+  // the Medium face at weight 500 (see $font-families / $font-weights semibold).
+  $headings-font-family: map.get(cds.$font-families, semibold),
+  $headings-font-weight: map.get(cds.$font-weights, semibold),
+
+  // Radii
+  $border-radius:    map.get(cds.$radii, sm),
+  $border-radius-sm: map.get(cds.$radii, xs),
+  $border-radius-lg: map.get(cds.$radii, md),
+  $border-radius-xl: map.get(cds.$radii, lg),
+
+  // Keep Bootstrap's CSS-variable output so consumers can override at runtime
+  $enable-dark-mode: false,
+  $enable-negative-margins: true
+);

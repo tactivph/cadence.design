@@ -1,0 +1,23 @@
+@use '../../styles/abstracts' as *;
+
+:host { display: flex; flex-direction: column; gap: var(--cds-space-6); }
+
+// PDO `.input-label` (styles/components/_inputs.scss): Inter Medium face at
+// font-weight 500, 14px, line-height 21px. `label-md` supplies the 14px size +
+// Inter Medium family; override the numeric weight to 500 (the semibold token,
+// PDO's `$weight-medium: 500`) and the line-height to the 21px body step so the
+// shared form-field label matches the real form label.
+.cds-field__label {
+  @include label-md;
+  font-weight: var(--cds-weight-semibold);
+  line-height: var(--cds-line-height-md);
+  color: var(--cds-text-secondary);
+}
+.cds-field__required { color: var(--cds-danger-500); margin-left: 2px; }
+.cds-field__hint { @include body-sm; color: var(--cds-text-tertiary); margin: 0; }
+.cds-field__error {
+  @include body-sm;
+  color: var(--cds-danger-600);
+  margin: 0;
+  display: flex; align-items: center; gap: var(--cds-space-4);
+}

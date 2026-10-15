@@ -1,0 +1,36 @@
+@use '../../styles/abstracts' as *;
+
+:host {
+  display: flex;
+  align-items: center;
+  gap: var(--cds-space-8);
+  height: var(--cds-control-height-md);
+  padding: 0 var(--cds-space-12);
+  background: var(--cds-surface);
+  border: 1px solid var(--cds-border);
+  border-radius: var(--cds-control-radius);
+  transition: border-color .15s ease, box-shadow .15s ease;
+
+  &:focus-within { border-color: var(--cds-color-primary); box-shadow: var(--cds-focus-ring); }
+  &.cds-input-group--invalid { border-color: var(--cds-danger-500); }
+  &.cds-input-group--disabled { background: var(--cds-surface-subtle); opacity: .7; }
+}
+
+// Addons (projected elements marked cds-prefix / cds-suffix)
+::ng-deep [cds-prefix], ::ng-deep [cds-suffix] {
+  display: inline-flex; align-items: center;
+  color: var(--cds-text-tertiary);
+  font-size: var(--cds-font-size-md);
+  white-space: nowrap;
+  flex: none;
+}
+
+// The inner input loses its own chrome — the group owns it
+::ng-deep .cds-input {
+  flex: 1 1 auto;
+  height: 100%;
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}

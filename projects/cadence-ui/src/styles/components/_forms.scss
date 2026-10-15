@@ -1,0 +1,46 @@
+// =============================================================================
+// Cadence UI — Global form-control styles (centralized)
+// Covers native inputs styled with [cdsInput]. Component-based controls
+// (checkbox, radio) ship their own encapsulated styles.
+// =============================================================================
+@use '../abstracts' as *;
+
+.cds-input {
+  display: block;
+  width: 100%;
+  height: var(--cds-control-height-md);
+  padding: 0 var(--cds-space-12);
+  font-family: var(--cds-font-family-base);
+  font-size: var(--cds-font-size-md);
+  color: var(--cds-text-primary);
+  background: var(--cds-surface);
+  border: 1px solid var(--cds-border);
+  border-radius: var(--cds-control-radius);
+  transition: border-color .15s ease, box-shadow .15s ease;
+  appearance: none;
+
+  &::placeholder { color: var(--cds-text-tertiary); }
+
+  &:hover:not(:disabled) { border-color: var(--cds-border-strong); }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: var(--cds-color-primary);
+    box-shadow: var(--cds-focus-ring);
+  }
+
+  &:disabled {
+    background: var(--cds-surface-subtle);
+    color: var(--cds-text-disabled);
+    cursor: not-allowed;
+  }
+
+  &.cds-input--invalid {
+    border-color: var(--cds-danger-500);
+    &:focus { box-shadow: 0 0 0 4px rgba(240, 68, 56, 0.2); }
+  }
+}
+
+textarea.cds-input { height: auto; min-height: calc(var(--cds-control-height-md) * 2); padding: var(--cds-space-10) var(--cds-space-12); resize: vertical; }
+select.cds-input { cursor: pointer; }

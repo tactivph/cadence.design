@@ -1,0 +1,34 @@
+@use '../../../styles/abstracts' as *;
+
+// PDO .nav-controls__item — pill link; active/hover = dark-green fill, white text.
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cds-space-8);
+  padding: var(--cds-space-8) var(--cds-space-16);
+  border-radius: var(--cds-radius-pill);
+  font-family: var(--cds-font-family-medium);
+  font-weight: var(--cds-weight-medium);
+  font-size: var(--cds-font-size-md);
+  line-height: 1.2;
+  letter-spacing: -0.28px;
+  text-align: center; // PDO .nav-controls__item label (reference-wins: centered, incl. caret items)
+  color: var(--cds-text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background-color .15s ease, color .15s ease;
+
+  i { color: var(--cds-text-secondary); }
+
+  &:hover,
+  &.cds-nav-item--active {
+    background: var(--cds-surface-primary-heaviest); // exact PDO nav active #095c37
+    color: #fff;
+    i { color: #fff; }
+  }
+}
+
+.cds-nav-item__caret { font-size: .85em; }

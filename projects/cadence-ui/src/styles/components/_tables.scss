@@ -1,0 +1,84 @@
+// =============================================================================
+// Cadence UI — Global table styles. Faithful to PDO `.list-table`.
+// Applied via [cdsTable] (adds .cds-table) or class="cds-table".
+// =============================================================================
+@use '../abstracts' as *;
+
+.cds-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cds-surface);
+  font-family: var(--cds-font-family-base);
+
+  // Header row — 40px, regular weight, tertiary, hairline underline.
+  thead tr { border-bottom: 1px solid var(--cds-border-table); }
+  thead th {
+    height: torem(40);
+    padding: 0 var(--cds-space-8);
+    font-weight: var(--cds-weight-regular);
+    font-size: var(--cds-font-size-md);
+    color: var(--cds-text-secondary);
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  // Body rows — 52px, hoverable, hairline underline.
+  tbody tr {
+    border-bottom: 1px solid var(--cds-border-table);
+    &:hover { background: var(--cds-gray-200); cursor: pointer; }
+  }
+  tbody td {
+    height: torem(52);
+    padding: 0 var(--cds-space-8);
+    font-size: var(--cds-font-size-md);
+    line-height: torem(21);
+    letter-spacing: -0.3px;
+    color: var(--cds-text-primary);
+    white-space: nowrap;
+    vertical-align: middle;
+
+    // inline row avatar
+    img.cds-table__avatar { width: torem(24); height: torem(24); border-radius: var(--cds-radius-pill); object-fit: cover; }
+  }
+
+  // ── Cell modifiers (match PDO list-table) ──────────────────────────────────
+  td.cds-col-favorite {
+    width: torem(36);
+    text-align: center;
+    i { cursor: pointer; }
+    i.ph { color: var(--cds-text-tertiary); }
+    i.ph-fill { color: var(--cds-accent-tangerine-100); color: #fac515; } // star-fill gold
+  }
+  td.cds-col-id { min-width: torem(100); color: var(--cds-text-tertiary); }
+  td.cds-col-email {
+    max-width: torem(180); overflow: hidden; text-overflow: ellipsis;
+    color: var(--cds-primary-700);
+  }
+  td.cds-col-muted { color: var(--cds-text-secondary); }
+
+  .cds-cell-user { display: inline-flex; align-items: center; gap: var(--cds-space-8); }
+}
+
+// Wrapper so the table can scroll horizontally on small screens.
+.cds-table-wrap { width: 100%; overflow-x: auto; }
+
+// ── Empty state (PDO .table-empty-state) ─────────────────────────────────────
+.cds-table-empty {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--cds-space-12);
+  width: 100%;
+  padding: var(--cds-space-48) var(--cds-space-16);
+
+  img { max-width: torem(120); }
+  i { font-size: torem(100); color: var(--cds-border); }
+
+  .cds-table-empty__labels { display: flex; flex-direction: column; gap: var(--cds-space-4); max-width: torem(560); }
+  h4 { margin: 0; font-size: var(--cds-font-size-2xl); font-family: var(--cds-font-family-semibold); font-weight: var(--cds-weight-semibold); line-height: torem(24); letter-spacing: -0.3px; color: var(--cds-text-primary); }
+  p  { margin: 0; font-size: var(--cds-font-size-lg); line-height: torem(24); letter-spacing: -0.3px; color: var(--cds-text-tertiary); }
+}

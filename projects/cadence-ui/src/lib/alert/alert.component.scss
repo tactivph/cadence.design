@@ -1,0 +1,39 @@
+@use '../../styles/abstracts' as *;
+
+:host {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cds-space-12);
+  padding: var(--cds-space-12) var(--cds-space-16);
+  border-radius: var(--cds-radius-md);
+  border: 1px solid transparent;
+}
+
+.cds-alert__icon { font-size: var(--cds-font-size-xl); line-height: 1.2; flex: none; }
+.cds-alert__content { flex: 1 1 auto; display: flex; flex-direction: column; gap: var(--cds-space-2); }
+.cds-alert__title { @include label-md; }
+.cds-alert__body { @include body-sm; color: var(--cds-text-secondary); }
+.cds-alert__body:empty { display: none; }
+.cds-alert__actions:empty { display: none; }
+.cds-alert__actions { display: flex; gap: var(--cds-space-8); align-items: center; }
+
+.cds-alert__close {
+  border: 0; background: transparent; cursor: pointer; color: inherit;
+  padding: var(--cds-space-2); line-height: 1; opacity: .7;
+  &:hover { opacity: 1; }
+}
+
+// variant colours (token-driven)
+@each $name in (success, warning, danger, info, neutral) {
+  :host.cds-alert--#{$name} {
+    background: var(--cds-status-#{$name}-bg);
+    border-color: var(--cds-status-#{$name}-fg);
+    color: var(--cds-status-#{$name}-fg);
+    .cds-alert__title { color: var(--cds-status-#{$name}-fg); }
+  }
+}
+:host.cds-alert--primary {
+  background: var(--cds-color-primary-subtle);
+  border-color: var(--cds-color-primary);
+  color: var(--cds-primary-700);
+}

@@ -1,0 +1,23 @@
+@use '../../../styles/abstracts' as *;
+
+:host { position: relative; display: inline-flex; }
+
+// PDO .badge-notif-count — flush top-right, danger pill, 11px medium.
+.cds-notif-bell__count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: var(--cds-space-4) var(--cds-space-8);
+  background: var(--cds-danger-600);
+  color: #fff;
+  font-family: var(--cds-font-family-medium);
+  font-size: var(--cds-font-size-xs);
+  font-weight: var(--cds-weight-medium);
+  line-height: 13.2px;
+  border-radius: var(--cds-radius-pill);
+  pointer-events: none;
+}

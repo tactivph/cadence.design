@@ -1,0 +1,35 @@
+@use '../../styles/abstracts' as *;
+
+.cds-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cds-space-8);
+  margin: 0; padding: 0;
+  list-style: none;
+  @include body-sm;
+}
+
+.cds-breadcrumb__item { display: inline-flex; align-items: center; gap: var(--cds-space-8); }
+
+.cds-breadcrumb__link {
+  color: var(--cds-text-tertiary);
+  text-decoration: none;
+  cursor: pointer;
+  &:hover { color: var(--cds-text-secondary); text-decoration: underline; }
+}
+
+.cds-breadcrumb__sep { color: var(--cds-text-tertiary); font-size: var(--cds-font-size-sm); }
+.cds-breadcrumb__current { color: var(--cds-text-primary); font-family: var(--cds-font-family-medium); font-weight: var(--cds-weight-medium); }
+
+// md size (PDO settings / form pages): trail at body-md (14/21). The current
+// item renders in the Inter Medium face at weight 500 (semibold role) per the
+// reference, vs the sm default's medium/400.
+:host(.cds-breadcrumb-host--md) {
+  .cds-breadcrumb { @include body-md; }
+  .cds-breadcrumb__sep { font-size: var(--cds-font-size-md); }
+  .cds-breadcrumb__current {
+    font-family: var(--cds-font-family-semibold);
+    font-weight: var(--cds-weight-semibold);
+  }
+}
