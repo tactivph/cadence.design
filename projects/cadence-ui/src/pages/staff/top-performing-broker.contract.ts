@@ -37,7 +37,7 @@ Top to bottom, inside the staff shell (\`cds-top-nav\`):
 4. **Pagination** — below the table.
 5. **Loading state** — shown while the report is fetching.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — application shell / primary nav (Dashboard active).
 - \`cds-notif-bell\`, \`cds-user-chip\` — shell header actions.
 - \`cds-breadcrumb\` (\`[items]\`) — Dashboard › Top performing broker.

@@ -23,7 +23,7 @@ Inside the client shell:
 1. **Hero banner** — full-width project image with overlay: project name (e.g. "Westwoods"), a `cds-badge` ("Premium unit"), and a location line (map-pin + "Cagayan de Oro, Misamis Oriental").
 2. **Feed section** — heading "Property Feed" over the feed list; `cds-empty-state` "No updates yet" when empty.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — client shell (Property feed active).
 - `cds-notif-bell` · `cds-user-chip` — header actions.
 - `cds-badge` — the unit-tier badge in the hero (solid, success).

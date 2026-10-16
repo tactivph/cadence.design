@@ -28,7 +28,7 @@ Inside the client shell (`cds-top-nav`, Financing active):
    - **Application Status** — progress of the submitted application.
 2. The built page shows the **Choose a Bank** empty state ("No bank recommendations yet" — recommendations appear once the endorsement is processed).
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — client shell (Financing active); header bell icon + `cds-avatar`.
 - `cds-tabs` + `cds-tab` — Choose a Bank / Apply / Application Status (each tab iconed).
 - `cds-empty-state` — the pre-recommendation empty state on Choose a Bank.

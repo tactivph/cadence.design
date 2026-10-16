@@ -33,7 +33,7 @@ Inside the staff shell (\`cds-top-nav\`):
    - **Right (Available roles)** — heading + helper text, then a scrollable list of role rows each a \`cds-checkbox\` with name + description.
 3. **Footer** — **Cancel** + **Invite staff** (disabled until a role / required input is set).
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\`, \`cds-notif-bell\`, \`cds-user-chip\` — shell (Admin in actions row).
 - \`cds-breadcrumb\` — the trail (current page rendered as a distinct text node).
 - \`cds-avatar\` — the user-details rail avatar.

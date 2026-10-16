@@ -1,5 +1,5 @@
 /*
- * Public API surface of @tactivstudios/cadence-ui
+ * Public API surface of @tactivph/cadence-ui
  * Styling + presentational components only. No HTTP, no app logic.
  */
 

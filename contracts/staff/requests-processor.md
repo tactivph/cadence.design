@@ -27,7 +27,7 @@ Inside the staff shell:
 2. **Page header** — `cds-page-header`: title "Processor"; right rail (`cds-page-actions`) = a filter button + a search input.
 3. **Queue area** — the requirements table (rows → processor detail) in a tall, centred container; when empty it shows the empty state below.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` (`hasCaret`, `active`) — staff shell (Processor active).
 - `cds-notif-bell` (`count`) + `cds-user-chip` (`name`, `role`) — header actions.
 - `cds-page-header` (`title`, `cds-page-actions` slot) — title + toolbar.

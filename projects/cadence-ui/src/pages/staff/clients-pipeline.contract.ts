@@ -38,7 +38,7 @@ Top to bottom, inside the staff shell (\`cds-top-nav\`):
 3. **Legend row** — the auto-tag note + a red-dot key "7+ days in one stage".
 4. **Board** — a horizontal row of \`cds-kanban-column\` for the active pipeline's stages, each holding \`cds-kanban-card\` items; scrolls horizontally.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — staff shell / primary nav (Dashboard active, Dashboard & Admin carry a caret).
 - \`cds-notif-bell\`, \`cds-user-chip\` — top-nav actions.
 - \`cds-page-header\` with the actions slot (\`[cds-page-actions]\`).

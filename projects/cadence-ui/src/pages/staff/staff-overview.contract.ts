@@ -43,7 +43,7 @@ Top to bottom, inside the staff shell (\`cds-top-nav\`):
    - **Left:** *Active staff* chart card, then *Pending invitations (n)* table card, then *Daily active members (n)* table card. The two table cards each carry a "Go to staff" link.
    - **Right:** a counters card (All members / Daily active / Daily inactive / Pending invitations) and a *Recently joined* list card.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — application shell / primary nav (Dashboard active).
 - \`cds-notif-bell\`, \`cds-user-chip\` — shell header actions.
 - \`cds-page-header\` — page title.

@@ -26,7 +26,7 @@ Inside the agent shell:
 2. **Heading row** — `h1` "Sellers profile" + tools: **Filters** icon button + **Search** input + **Invite seller** (`button[cds-button]` primary, `iconLeft="ph ph-plus"`).
 3. **Roster area** — the sellers table once populated; **empty for this agent**, so it renders the empty state centered.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — agent shell.
 - `cds-notif-bell` (`count`) + `cds-user-chip` (`name`, `role`, `src`) — shell header actions.
 - `button[cds-button]` (`variant="primary"`, `iconLeft="ph ph-plus"`) — the two **Invite seller** actions (heading + empty state).

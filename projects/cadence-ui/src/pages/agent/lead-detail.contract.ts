@@ -34,7 +34,7 @@ Inside the agent shell, two columns:
    - **Tabs** (\`cds-tabs\`): **Prospect property** (property cards + Add property) · **Endorsements** (list or empty-state Start Endorsement).
 4. **Right rail** — **Profile** \`cds-card\`: account details (Lead ID, Lead Source, Date Inquired, Enrolled by), contact, personal details, appointment slip, site-visit assessment.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — agent shell (Leads active).
 - \`cds-page-header\` + \`cds-breadcrumb\` + action \`button[cds-button]\`s.
 - \`cds-alert variant="warning"\` with \`[cds-alert-actions]\` — CAS banner.

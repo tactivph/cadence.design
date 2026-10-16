@@ -29,7 +29,7 @@ Inside the client shell:
    - **Left rail** — `cds-stepper` (vertical), the 12 stages with Pre-reservation current.
    - **Main panel** — `cds-card` titled "Pre-reservation Requirements (To be filled by 'You')" with a **Submit for verification** button + grid/list view toggles, then the requirement rows (icon · title · status badge · open/chevron cue).
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — client shell (Requirements active).
 - `cds-notif-bell` · `cds-user-chip` — header actions.
 - `cds-badge` — unit badge in hero + per-row status pill (neutral / info tones).

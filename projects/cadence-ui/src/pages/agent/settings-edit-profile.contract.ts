@@ -32,7 +32,7 @@ Inside the app shell:
    - **Fields** — First name (required) · Middle name · Last name (required) · Mobile number (required, \`(+63)\` prefix) · Date of birth (calendar suffix) · Gender (Male / Female radios).
 3. **Footer actions** — Cancel + Save changes (right-aligned).
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — app shell.
 - \`cds-notif-bell\` · \`cds-user-chip\` — header actions.
 - \`cds-breadcrumb\` (\`items\`, \`separator\`) — Settings → Edit profile.

@@ -37,7 +37,7 @@ Inside the agent shell:
 ### Columns
 **Lead name** · **Requested by** · **Property name** · **Date & time** · **Status**
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — agent shell (Dashboard active).
 - \`cds-notif-bell\` (\`count\`) + \`cds-user-chip\` (\`name\`, \`role\`, \`src\`) — shell header actions.
 - \`cds-tabs\` (\`activeIndex\`) + \`cds-tab\` (\`label\`, \`icon\`) — the dashboard tab bar; Visit schedules is index 2.

@@ -32,7 +32,7 @@ Inside the staff shell:
 2. **Responsive card grid** — one interactive card per development (cover, title,
    location with pin icon, product list with folder icon).
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — shell (Admin active); \`cds-notif-bell\`, \`cds-user-chip\`.
 - \`cds-page-header\` with \`[cds-page-actions]\`.
 - \`cds-input-group\` + \`input[cdsInput]\` — search.

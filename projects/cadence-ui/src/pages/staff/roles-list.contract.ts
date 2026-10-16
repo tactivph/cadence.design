@@ -32,7 +32,7 @@ Inside the staff shell (\`cds-top-nav\`):
 3. **Active Roles** section — collapsible header + a responsive grid of role \`cds-card\`s (name + \`cds-badge tone="success"\` + description).
 4. **Inactive Roles** section — same grid; badge \`tone="neutral"\`.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\`, \`cds-notif-bell\`, \`cds-user-chip\` — shell (Admin in the actions row).
 - \`cds-tabs\` + \`cds-tab\` — the Staff / Roles switch.
 - \`cds-input-group\` + \`input[cdsInput]\` — Search roles (prefix magnifier).

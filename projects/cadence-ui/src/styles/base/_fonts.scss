@@ -3,7 +3,7 @@
 // Font files ship with the package under `assets/fonts`. The consuming app
 // copies them via an angular.json assets glob (see README). Override the path
 // before importing the theme if your app serves them elsewhere:
-//     $cds-font-path: '/my/path';  @use '@tactivstudios/cadence-ui/styles/theme';
+//     $cds-font-path: '/my/path';  @use '@tactivph/cadence-ui/styles/theme';
 // PDO parity: each Inter weight is a SEPARATELY NAMED family ("Inter Regular",
 // "Inter Medium", "Inter SemiBold", "Inter Bold") with the visual weight baked
 // into the family NAME and numeric font-weight left at 400 — mirroring how the

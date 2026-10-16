@@ -26,7 +26,7 @@ Inside the agent shell:
 3. **Leads Pipeline** — a horizontal row of `cds-kanban-column`, each with `cds-kanban-card` leads.
 4. **Requirements Pipeline** — a second row of columns (Pre-reservation → Turnover).
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — agent shell (Dashboard active).
 - `cds-page-header` with filter `cds-dropdown`s + `cds-input-group` search.
 - `cds-alert variant="info"` — the auto-tagging banner.

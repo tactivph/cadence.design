@@ -1,4 +1,4 @@
-# @tactivstudios/cadence-ui
+# @tactivph/cadence-ui
 
 **Cadence Design System** — the shared Angular component library + centralized styling for the
 Cadence platform (the ground-up rebuild of PDO). Built with **Angular 22**, **SASS**, and
@@ -15,11 +15,11 @@ Design language (colors, type, spacing, status taxonomies), the **Inter + Hyogo*
 
 ## Install (in the Cadence app)
 
-The package lives in **GitHub Packages** under the `@tactivstudios` scope. Add an `.npmrc` to the
+The package lives in **GitHub Packages** under the `@tactivph` scope. Add an `.npmrc` to the
 consuming app (see [`.npmrc.example`](.npmrc.example)):
 
 ```ini
-@tactivstudios:registry=https://npm.pkg.github.com
+@tactivph:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
 ```
 
@@ -27,7 +27,7 @@ Then:
 
 ```bash
 export NODE_AUTH_TOKEN=<a GitHub PAT with read:packages>
-npm install @tactivstudios/cadence-ui bootstrap @phosphor-icons/web
+npm install @tactivph/cadence-ui bootstrap @phosphor-icons/web
 ```
 
 `bootstrap` and `@phosphor-icons/web` are **peer dependencies** — install them in the app.
@@ -37,7 +37,7 @@ npm install @tactivstudios/cadence-ui bootstrap @phosphor-icons/web
 In the app's global `styles.scss`:
 
 ```scss
-@use '@tactivstudios/cadence-ui/styles/theme';
+@use '@tactivph/cadence-ui/styles/theme';
 ```
 
 This emits the themed Bootstrap + CSS custom properties + base styles. Add the icon CSS and font
@@ -51,7 +51,7 @@ copy to the app's `angular.json`:
   "src/styles.scss"
 ],
 "assets": [
-  { "glob": "**/*", "input": "node_modules/@tactivstudios/cadence-ui/styles/fonts", "output": "assets/fonts" }
+  { "glob": "**/*", "input": "node_modules/@tactivph/cadence-ui/styles/fonts", "output": "assets/fonts" }
 ]
 ```
 
@@ -61,7 +61,7 @@ import if your app serves them elsewhere.)
 ### 2. Use the components (standalone)
 
 ```ts
-import { CdsButtonComponent, CdsStatusBadgeComponent } from '@tactivstudios/cadence-ui';
+import { CdsButtonComponent, CdsStatusBadgeComponent } from '@tactivph/cadence-ui';
 
 @Component({
   standalone: true,
@@ -149,4 +149,4 @@ The library version lives in `projects/cadence-ui/package.json`.
 | Icons | Phosphor (`@phosphor-icons/web`) — `ph ph-*`, `ph-bold`, `ph-fill` |
 | Fonts | Inter (UI) + Hyogo (display) |
 | Docs | Storybook 10 |
-| Registry | GitHub Packages (`@tactivstudios` scope) |
+| Registry | GitHub Packages (`@tactivph` scope) |

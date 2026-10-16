@@ -25,7 +25,7 @@ Inside the app shell:
    - Fields — Province (required, select) · Municipality/City (required, select) · District/Barangay (required, select) · Postal Code (text) · Address 1 (required, text) · Address 2 (text, placeholder "Subdivision/Bldg. name/Unit no.").
 3. **Footer actions** — Cancel + Save changes (right-aligned).
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — app shell.
 - `cds-notif-bell` · `cds-user-chip` — header actions.
 - `cds-breadcrumb` — Settings → Change address.

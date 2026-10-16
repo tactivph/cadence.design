@@ -1,5 +1,5 @@
-# Copy to .npmrc in the CONSUMING app (Cadence) to install @tactivstudios/* from GitHub Packages.
+# Copy to .npmrc in the CONSUMING app (Cadence) to install @tactivph/* from GitHub Packages.
 # Create a GitHub Personal Access Token (classic) with read:packages and export it as NODE_AUTH_TOKEN,
 # or replace ${NODE_AUTH_TOKEN} with the token value (do NOT commit a real token).
-@tactivstudios:registry=https://npm.pkg.github.com
+@tactivph:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}

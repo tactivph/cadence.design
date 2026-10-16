@@ -2,7 +2,7 @@
 
 This folder holds a **contract per application page**. Each contract is the single,
 authoritative spec Claude Code (or any engineer) follows to implement that page in the
-**Cadence** app against the `@tactivstudios/cadence-ui` design system.
+**Cadence** app against the `@tactivph/cadence-ui` design system.
 
 Every contract has a matching **Storybook page** (`Pages/<POV>/<Name>`) that shows the
 high-fidelity target built from real Cadence components, with the contract rendered on the

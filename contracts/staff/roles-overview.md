@@ -35,7 +35,7 @@ Top to bottom, inside the staff shell (`cds-top-nav`):
    - **Left:** *Role distribution* chart card, then an *Unassigned roles (n)* section (section title + "Manage roles" link + table), then an *Active roles (n)* section (section title + "Manage roles" link + a grid of role cards).
    - **Right:** a counters card (All / Active / Inactive / Unassigned roles).
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — application shell / primary nav (Dashboard active).
 - `cds-avatar` — shell header avatar + assigned-member avatars on role cards.
 - `cds-page-header` with actions (`[cds-page-actions]`).

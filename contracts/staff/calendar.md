@@ -27,7 +27,7 @@ Inside the staff shell:
    - **Left — Calendar** — month header (current month + caret) with prev / **Today** / next controls, then the month grid (weekday row + week rows of day cells).
    - **Right — Schedule panel** — `cds-card` with the selected date, then `cds-tabs` (**Incomplete** / **Completed**), each showing its entries or an empty state.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — shell (Calendar active).
 - `cds-notif-bell` + `cds-user-chip` — header actions.
 - `button[cds-button]` (`iconOnly` / `iconLeft`) — prev month, **Today**, next month.

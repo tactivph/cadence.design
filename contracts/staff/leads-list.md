@@ -29,7 +29,7 @@ Inside the staff shell:
    chip, the enrolling broker (avatar + name) and a row chevron.
 4. Footer pagination.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — shell (Leads active); `cds-notif-bell`, `cds-user-chip`.
 - `button[cds-button]` — **Export** (ghost-neutral).
 - `table[cdsTable]` + `cds-table-header` — the table + column header row.

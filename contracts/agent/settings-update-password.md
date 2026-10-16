@@ -29,7 +29,7 @@ Inside the app shell:
    - **Confirm password** — `cds-form-field` + password input with eye icon.
 3. **Footer actions** — Cancel + Update password (right-aligned).
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — app shell.
 - `cds-notif-bell` · `cds-user-chip` — header actions.
 - `cds-breadcrumb` (`items`) — Settings → Update password.

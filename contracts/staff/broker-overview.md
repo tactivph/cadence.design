@@ -36,7 +36,7 @@ Top to bottom, inside the staff shell (`cds-top-nav`):
    - **Left:** a row of two chart cards (*Top performing broker (Sales)* with a "Show all" link, *Top performing broker (Volume)*), then a *Least performing brokers* table section (with a "Manage brokers" link), then a *Top brokers with activities* table section.
    - **Right:** a counters card (All / Daily active / Daily inactive brokers / Pending invitations).
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — application shell / primary nav (Dashboard active).
 - `cds-notif-bell`, `cds-user-chip` — shell header actions.
 - `button[cds-button]` — **Invite broker** (`variant="secondary-neutral"`, `iconLeft="ph ph-plus"`) and **Generate report** (`variant="primary"`). (The "Show all" / "Manage brokers" links are anchors; use `button[cds-button]` `variant="ghost"` if rendered as buttons.)

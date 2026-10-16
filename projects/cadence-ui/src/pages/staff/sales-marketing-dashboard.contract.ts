@@ -40,7 +40,7 @@ Top to bottom, inside the staff shell (\`cds-top-nav\`):
 3. **Property sales breakdown** — two equal cards side by side: *Sold by unit price* and *Sold by project* (each hosts a treemap the app renders).
 4. **Property performance** — one card with the scheduled-for-visit / reserved / sold figures.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — application shell / primary nav (Dashboard active).
 - \`cds-page-header\` with \`cds-breadcrumb\` (\`[cds-page-breadcrumb]\`) and actions (\`[cds-page-actions]\`).
 - \`cds-dropdown\` — the date-range picker trigger.

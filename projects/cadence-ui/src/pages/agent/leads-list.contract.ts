@@ -38,7 +38,7 @@ Inside the agent shell:
 ### Columns
 (favorite) · **ID** · **Name** · **Lead Progress** · **Status** · **Mobile Number** · **Email** · **Enrolled by** · **Expiry Date** · **Lead Temperature** · (chevron)
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — agent shell (Leads active).
 - \`cds-notif-bell\` (\`count\`) + \`cds-user-chip\` (\`name\`, \`role\`, \`src\`) — shell header actions.
 - \`button[cds-button]\` — the three page actions (ghost-neutral Export, secondary-neutral Share, primary Manual enrollment).

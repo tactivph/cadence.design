@@ -28,7 +28,7 @@ Inside the client shell:
 1. **Page head** — title "Sites" with a search \`cds-input-group\` (magnifying-glass prefix, "Search" placeholder) on the right.
 2. **Body** — the sites viewer; \`cds-empty-state\` (house icon, "No Sites Yet", "No sites are available at this time.") when empty.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — client shell (Site Map active).
 - \`cds-avatar\` + \`cds-badge\` — user chip + notification badge in the header.
 - \`cds-input-group\` + \`cdsInput\` — the search box.

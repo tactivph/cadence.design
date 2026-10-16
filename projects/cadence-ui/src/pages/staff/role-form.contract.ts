@@ -33,7 +33,7 @@ Inside the staff shell:
    - **Right** — **Permissions** card: a column header row of action labels, then per-module sections, each listing permission rows (name + description) with a checkbox per action column.
 4. **Footer** — right-aligned **Cancel** + **Create role** actions.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — shell (Admin active).
 - \`cds-notif-bell\` + \`cds-user-chip\` — header actions.
 - \`cds-form-field\` (\`label\`, \`required\`) — Role name + Description fields.

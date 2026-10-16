@@ -38,7 +38,7 @@ Inside the staff shell:
 3. Per tab: a **toolbar** (an "N awaiting review" badge on the left; a filter button +
    search on the right) over the data table, with footer pagination.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — shell (Approval active); \`cds-notif-bell\`, \`cds-user-chip\`.
 - \`cds-page-header\` with \`[cds-page-actions]\`.
 - \`cds-stat-tile\` — the two header counters.

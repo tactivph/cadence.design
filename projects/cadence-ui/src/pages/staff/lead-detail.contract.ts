@@ -41,7 +41,7 @@ Inside the staff shell (\`cds-top-nav\`: Dashboard ▾ · Approval · **Leads** 
      - **Client appointment slip (CAS)** — Status (\`cds-badge\` Active), Activated, Source, Uploaded file (link), Expiry.
      - **Site visit assessment** — Assessment (e.g. "Closeable").
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` (+ \`cds-notif-bell\`, \`cds-user-chip\`) — staff shell (Leads active).
 - \`cds-breadcrumb\` + ghost \`button[cds-button]\` — breadcrumb / Back.
 - \`cds-alert\` (\`variant="info"\` / \`variant="warning"\`) — CAS banner.

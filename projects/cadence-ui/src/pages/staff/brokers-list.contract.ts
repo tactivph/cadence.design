@@ -32,7 +32,7 @@ Inside the staff shell (\`cds-top-nav\`, Sales Network active):
 2. **Data table** (\`table[cdsTable]\` + \`cds-table-header\`) — one row per member; Type and Status render as badges; the Actions cell shows **Resend invite** only for Invited members.
 3. **Footer** — \`cds-table-pagination\` (itemName "member").
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\`, \`cds-notif-bell\`, \`cds-user-chip\` — shell.
 - \`table[cdsTable]\` + \`cds-table-header\` (\`[columns]\`) — the table.
 - \`cds-status-badge\` — the **Type** pill (\`tone\` primary / info / seasoning, \`[dot]="true"\`) and the **Status** pill (\`success\` for Active, \`neutral\` for Invited).

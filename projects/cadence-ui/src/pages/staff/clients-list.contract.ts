@@ -30,7 +30,7 @@ Inside the staff shell:
 3. Table rows with a favourite star, the category status pill and the enrolling agent (avatar + name).
 4. Footer pagination.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — shell (Clients active).
 - \`cds-page-header\`.
 - \`cds-data-table\` — table chrome + loading/empty states + toolbar/footer slots.

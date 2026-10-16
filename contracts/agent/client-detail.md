@@ -30,7 +30,7 @@ Inside the agent shell (Dashboard · Leads · **Clients** active · Calendar · 
    - **Documents** (count) — document list, or empty-state + **Upload document**.
 3. **Right rail** — `cds-card` + `cds-tabs` with a **Profile** tab: clustered details — **Contact** (Mobile, Email, Address), **Enrollment** (Client ID, Category, Enrolled by, Date enrolled), **Property** (Project, Unit, Contract price), **Requirements** (Appointment slip, Proof of income, Valid ID …).
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — agent shell (Clients active); `cds-user-chip`, `cds-notif-bell` in actions.
 - `cds-page-header` + `cds-breadcrumb` + `cds-avatar` — client header.
 - `cds-status-badge kind="client-category"` — category pill (e.g. expired/reserved_buyer).

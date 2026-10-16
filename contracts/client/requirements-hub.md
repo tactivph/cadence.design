@@ -25,7 +25,7 @@ Inside the client shell, two columns:
 3. **Left rail** — the **12 stages** as a vertical list (`cds-stepper` vertical, or a stage list), each with its state and optional per-step timer/lock.
 4. **Main panel** — the selected stage's items (list/grid): each item = title + kind + **status pill** + action (Open form / Upload / Download).
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — client shell (Requirements active).
 - `cds-page-header`.
 - `cds-alert variant="info"` — the guidance banner.

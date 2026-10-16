@@ -32,7 +32,7 @@ Inside the staff shell (`cds-top-nav`):
 3. **Analytics** — a two-up row (*Requirement verification insights* line, *Average verification time* donut + Stage 1–6 legend), then *Peak visit times* heatmap, then *Scheduled visits by date* bars (y-axis "Number of visits").
 4. **Sidebar** — a verification-counters card (Verified today / For revision / Pending / Average verification time), a schedule-counters card (Scheduled today / Incomplete), a **Pending for verification** list card (avatar + name + requirement type, open-list action), and a **Visits pending** card ("See more").
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]`, `cds-notif-bell`, `cds-user-chip` — shell.
 - `cds-page-header` with `[cds-page-actions]`.
 - `button[cds-button]` — **Generate report** (`variant="primary"`), the ghost open-list / **See more** actions.

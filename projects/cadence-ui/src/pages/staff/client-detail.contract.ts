@@ -36,7 +36,7 @@ Inside the staff shell (**Clients** active), one column with a two-column body:
    - **Primary column** — \`cds-tabs\`: **Activity** (feed of \`cds-card\` activity items: actor avatar, title, role/meta, body, timestamp) · **Documents** (count badge; list/empty).
    - **Right rail** — bordered aside with a \`cds-tabs\` **Profile** panel of clustered detail groups: **Contact** (Mobile, Email, Address), **Lead details** (Client ID, Lead Source, Date Inquired), **Property interest** (Project, Target unit, Unit price), **Assigned team** (Project Specialist, Sales Director, Enrolled by).
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — staff shell (Clients active); \`cds-notif-bell\`, \`cds-user-chip\` in actions.
 - \`cds-breadcrumb\` (\`items\`) — Clients › client name.
 - \`cds-avatar\` (\`name\`, \`size\`) — client header + activity actors.

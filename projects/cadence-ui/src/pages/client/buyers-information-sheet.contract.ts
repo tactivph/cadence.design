@@ -35,7 +35,7 @@ Inside the client shell:
 3. **Form card** — the current step's fields, grouped with \`cds-field-group\`, built from \`cds-form-field\` + \`cdsInput\`.
 4. **Footer** — **Previous** / **Save & Next** (last step → **Confirm & submit**).
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — client shell (Requirements active).
 - \`cds-page-header\` + \`cds-breadcrumb\`.
 - \`cds-stepper\` — the wizard steps.

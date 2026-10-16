@@ -32,7 +32,7 @@ Inside the agent shell:
      - **Step 2 — Financing Scheme** (`cds-card`): numbered step header + a grid of six interactive `cds-card` scheme tiles (title + description).
    - **Aside (right)**: **Remarks** `cds-card` — MF/buyer-borne-charges notes + sample-computation + indicative-only disclaimer.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — agent shell (Calculator active).
 - `cds-notif-bell` (`count`) + `cds-user-chip` (`name`, `role`, `src`) — shell header actions.
 - `button[cds-button]` — **Reset** (secondary-neutral, `iconLeft`) and **Add property** (secondary-neutral).

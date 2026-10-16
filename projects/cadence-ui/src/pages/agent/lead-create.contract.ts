@@ -35,7 +35,7 @@ Inside the agent shell (\`cds-top-nav\`, Leads active):
 6. **Prospect Property** — the property cascade (Site, Project, House Type, Product Offering, Block and Lot), an **Add property** card ("Does this lead have another property in mind?"), and a right-hand **Prospect Property list** with an empty state.
 7. **Footer actions** — **Cancel** + **Finish enrollment** (disabled until valid).
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\`, \`cds-notif-bell\`, \`cds-user-chip\` — shell.
 - \`cds-breadcrumb\` — the trail.
 - \`cds-form-field\` wrapping \`input[cdsInput]\` / \`select[cdsInput]\` — text, email, tel and select fields; \`[required]\` on First name, Last name, Mobile number.

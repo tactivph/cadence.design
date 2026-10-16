@@ -28,7 +28,7 @@ Inside the app shell:
 2. **Header row** — `h1` "Notifications" + **Mark all as read** (small secondary-neutral button, `iconLeft`).
 3. **Tabs + timeline** — `cds-tabs` with **All** and **Unread (n)** tabs; each tab holds a `timeline` of `cds-card` items: leading status icon (unread-emphasised) + title + subtext + relative time. Unread items carry an unread accent.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — app shell.
 - `cds-notif-bell` (`count`) + `cds-user-chip` (`name`, `role`, `src`) — shell header actions.
 - `button[cds-button]` (`variant="secondary-neutral"`, `size="sm"`, `iconLeft`) — **Mark all as read**.

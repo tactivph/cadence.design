@@ -30,7 +30,7 @@ Inside the agent shell:
 2. **Header row** — \`h1\` "Sites" + a **Search** input (native, no \`cds-*\` input here).
 3. **Sites grid** — a 4-column grid of \`cds-card\` ( \`[interactive]\`, \`[flush]\` ): image banner + content (title, location with map-pin icon, product categories with folder icon, truncated).
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — agent shell (Site Map active).
 - \`cds-notif-bell\` (\`count\`) + \`cds-user-chip\` (\`name\`, \`role\`, \`src\`) — shell header actions.
 - \`cds-card\` (\`[interactive]\`, \`[flush]\`) — the development cards (interactive = whole card is the "View site map" target; flush = image bleeds to card edges).

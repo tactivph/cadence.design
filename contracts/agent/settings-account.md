@@ -29,7 +29,7 @@ Inside the app shell:
    - **Details** — labelled rows: Mobile number · Date of birth · Gender · Address.
    - **Actions** — stacked, left-aligned: **Edit profile** · **Change address** · **Update password**.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — app shell.
 - `cds-notif-bell` (`count`) + `cds-user-chip` (`name`, `role`, `src`) — header actions.
 - `cds-page-header` (`title`, `subtitle`) — page title block.

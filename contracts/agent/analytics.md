@@ -33,7 +33,7 @@ Inside the agent shell (`cds-top-nav`):
 4. **Row 2** — *Property reservations over time* (Leads / Reservation legend) and *Client distribution* (desc "Customer segmented by categories").
 5. **Row 3** — *Top-selling properties* and *Sales revenue & units sold*.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — application shell (Dashboard active, with caret).
 - `cds-notif-bell`, `cds-user-chip` — header actions.
 - `cds-tabs` + `cds-tab` — the Status board / Analytics / Visit schedules switch.

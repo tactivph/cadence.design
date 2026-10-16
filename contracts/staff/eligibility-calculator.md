@@ -29,7 +29,7 @@ Inside the staff shell:
      - **Step 2 · Financing Scheme** — numbered `cds-card`: a grid of selectable scheme option cards (Spot Cash · Deferred Cash with/without DP · In-House Financing · HDMF/Pag-IBIG · Bank Financing).
    - **Right (side)** — **Remarks** `cds-card`: Miscellaneous Fee + buyer-borne charges disclaimers and the indicative-computation note.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — shell (Calculator active).
 - `cds-notif-bell` + `cds-user-chip` — header actions.
 - `cds-page-header` (`title`, `subtitle`) with `[cds-page-actions]` — header + Reset.

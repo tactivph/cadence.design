@@ -36,7 +36,7 @@ Inside the agent shell:
 ### Columns
 (favorite) · **ID** · **Name** · **Category** · **Mobile Number** · **Email** · **Enrolled by** · **Last Updated**
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — agent shell (Clients active).
 - \`cds-notif-bell\` (\`count\`) + \`cds-user-chip\` (\`name\`, \`role\`, \`src\`) — shell header actions.
 - \`table[cdsTable]\` + \`cds-table-header\` (\`columns\`) — the clients table.

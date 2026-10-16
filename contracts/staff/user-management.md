@@ -28,7 +28,7 @@ Inside the staff shell:
 3. Per tab: a **toolbar** (search on the left; a primary **Create** action on the right)
    over a data table, with footer pagination.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-top-nav` + `a[cds-nav-item]` — shell (Admin active); `cds-notif-bell`, `cds-user-chip`.
 - `cds-page-header`.
 - `cds-tabs` + `cds-tab` — Staff / Roles.

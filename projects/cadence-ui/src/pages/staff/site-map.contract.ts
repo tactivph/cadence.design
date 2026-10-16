@@ -30,7 +30,7 @@ Inside the staff shell:
 2. **Page header** — title "Sites" with a **Search** field in the actions slot.
 3. **Responsive card grid** — one \`cds-card\` per development: cover image, title, location (map-pin icon), product lines (folder icon).
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — shell (Site Map active).
 - \`cds-notif-bell\` + \`cds-user-chip\` — header actions.
 - \`cds-page-header\` (\`title\`) with \`[cds-page-actions]\` slot — the "Sites" header.

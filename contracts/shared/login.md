@@ -25,7 +25,7 @@ Full-page, outside the app shell:
 2. **Card** — heading "Login to your account", sub "Please enter your details."; Email field; Password field with show/hide eye toggle; inline form error; **Forgot password** link; **Login** button.
 3. **Support** — a "Contact support" button below the card.
 
-## Components (from `@tactivstudios/cadence-ui`)
+## Components (from `@tactivph/cadence-ui`)
 - `cds-auth-layout` — reusable full-page auth frame (**NEW**, CAD-111; reused by forgot/reset/setup/register/error pages).
 - `cds-form-field` + `input[cdsInput]` — Email and Password fields.
 - `cds-input-group` with a `cds-suffix` — the password show/hide eye toggle.

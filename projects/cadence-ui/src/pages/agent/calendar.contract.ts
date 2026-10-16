@@ -34,7 +34,7 @@ Inside the agent shell:
    - **Left — month calendar**: header with the month label + caret, and a **Previous month / Today / Next month** control cluster; a weekday header row (Sunday…Saturday); a 6×7 **month grid** of day cells (outside-month days muted, today highlighted).
    - **Right — schedule side panel**: "Schedule" heading + selected-date subtitle + **Log past visit**; \`cds-tabs\` with **Incomplete** and **Completed** tabs, each listing that day's visits.
 
-## Components (from \`@tactivstudios/cadence-ui\`)
+## Components (from \`@tactivph/cadence-ui\`)
 - \`cds-top-nav\` + \`a[cds-nav-item]\` — agent shell (Calendar active).
 - \`cds-notif-bell\` (\`count\`) + \`cds-user-chip\` (\`name\`, \`role\`, \`src\`) — shell header actions.
 - \`button[cds-button]\` — month controls (secondary-neutral, \`iconOnly\` carets + "Today") and **Log past visit** (primary, \`iconLeft\`).
