@@ -51,13 +51,6 @@ Inside the client shell:
 - [ ] Loading / empty / error states behave as specified.
 - [ ] Built only from Cadence components.
 
-## Visibility rule (PO decided, pdo parity, 2026-10-17)
-Final PO decisions (supersede the earlier "available only" proposal; recorded on CAD-85 / CAD-90 and in `concept/config/DECISIONS.md`). There is **no availability narrowing**.
-1. **Units:** a buyer sees all units with their status (Available, Sold/Reserved, On-Hold), as pdo does; sold and on-hold lots are not excluded (applies to the site map, `site-map.md`; `pdo/api/developments/views/development.py:870-887`).
-2. **Own unit:** a buyer always sees the unit they hold a contract on, regardless of its status.
-3. **Sites:** only sites with a published map, limited to the buyer's active region (`pdo/api/developments/managers.py:35-40`, `pdo/api/developments/views/development.py:61-75`); pdo scope, unchanged.
-4. **Property feed:** no inventory rule. The feed stays limited to the buyer's own contract updates, as pdo does (`pdo/web/src/app/pages/client/property-feed/property-feed.component.ts:28-31,52-62`). The hero shows only the buyer's own contracted unit.
-
 ## Notes
 - The captured reference shows the empty feed only; feed-item shape and detail route are unconfirmed — marked `(confirm)`.
 - Backing endpoints are inferred from the concept audit (`06 §6.4`); confirm shapes against the API when implementing.
