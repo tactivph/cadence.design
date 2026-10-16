@@ -16,9 +16,9 @@ entry points to enroll more.
 
 ## Data
 - **Leads** — `GET /api/leads/` (paginated; query params for filter + search).
-- **Export** — `GET /api/leads/export/` (download, see Export action).
+- **Export** — `GET /api/leads/export/` (downloads an `.xlsx` of the current filter/search, all matching rows; see Export action).
 - Row shape (`Row`): `id` · `name` · `progress` (lead-progress code) · `status` (client-category code) · `mobile` · `email` · `enrolledBy` · `expiry` (date string or `null`; literal `"Expired"` when the lock has lapsed) · `temp` (`hot` | `warm` | `cold` | `dormant`).
-- **Lead progress** codes: `new_lead` (New Lead) · `site_visit_scheduled` (Site Visit Scheduled) · `site_visit_completed` (Site Visit Completed) · (later funnel stages as they arrive).
+- **Lead progress** codes (derived server-side from schedules, reports, CAS, endorsement requests and contracts; pdo parity): `new_lead` (New Lead) · `engaged_qualified` (Engaged & Qualified) · `site_visit_scheduled` (Site Visit Scheduled) · `site_visit_completed` (Site Visit Completed) · `unit_computation_finalized` (Unit & Computation Finalized) · `reserved` (Reserved) · `dropped` (Dropped). (confirm `cds-lead-progress-tag` covers all seven; otherwise a DS ticket.)
 - **Status** codes: `available` (Available) · `signed_cas` (Signed CAS) · `unavailable` (Unavailable).
 
 ## Layout
@@ -60,15 +60,15 @@ Inside the agent shell:
 | **Manual enrollment** | Agent creates a lead directly. | `POST /api/leads/` (+ `/api/leads/registration/`) | `/agent/leads/add` |
 | **Row click** | Open the lead workspace. | — | `/agent/leads/:id` |
 | **Expand chevron** | Expand the row for inline detail (no navigation). | — | stays |
-| **Favorite star** | Toggle favorite on the lead. | `POST /api/users/lead/favorite/` (confirm) | stays |
-| **Filters** | Filter the list (project/status/temperature). | re-run `GET /api/leads/` with params | stays |
-| **Search** | Search by name/contact. | re-run `GET /api/leads/` with query | stays |
+| **Favorite star** | Set favorite (`POST`) / unset favorite (`DELETE`); not a single toggle call. | `POST /api/users/lead/favorite/` · `DELETE /api/users/lead/favorite/<lead_id>/` | stays |
+| **Filters** | Filter the list by pdo `LeadFilter` params: status (`current_status`), region, agent, favorites, date range. | re-run `GET /api/leads/` with params | stays |
+| **Search** | Search by lead first name. | re-run `GET /api/leads/` with `search` | stays |
 | **Pagination** | Page through leads. | re-run `GET /api/leads/` with page params | stays |
 
 ## Rules / validation
 - When a lead's **Status** is **Signed CAS**, the inline note directs the agent to open the lead to continue (progress happens in lead detail, not the list).
 - **Expiry Date** reflects the CAS / reservation lock; once lapsed it shows **Expired** in danger styling.
-- Favorite is a per-lead toggle; the star reflects current favorite state.
+- Favorite is per user and per lead: clicking an unfilled star calls `POST`, a filled star calls `DELETE`; the star reflects current favorite state.
 - Row navigation and chevron expand are distinct — the chevron must not navigate.
 
 ## Acceptance criteria
