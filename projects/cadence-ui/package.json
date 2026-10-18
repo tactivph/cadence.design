@@ -1,6 +1,6 @@
 {
   "name": "@tactivph/cadence-ui",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Cadence design system — Angular 22 presentational components + centralized SASS/Bootstrap styling. Styling & components only; wire behavior and data in the consuming app.",
   "author": "Tactiv Studios",
   "license": "UNLICENSED",
@@ -21,7 +21,9 @@
     "@angular/core": "^22.0.0",
     "@angular/forms": "^22.0.0",
     "bootstrap": "^5.3.0",
-    "@phosphor-icons/web": "^2.1.0"
+    "@phosphor-icons/web": "^2.1.0",
+    "apexcharts": "^5.10.3",
+    "ng-apexcharts": "^2.5.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
