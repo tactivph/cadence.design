@@ -1,0 +1,47 @@
+@switch (state()) {
+  @case ('loading') {
+    <div class="cds-chart__state" role="status" aria-live="polite" [attr.aria-label]="'Loading ' + ariaLabel()">
+      <cds-skeleton variant="block" width="100%" [height]="height() + 'px'" />
+    </div>
+  }
+  @case ('error') {
+    <div class="cds-chart__state" role="alert"><ng-content select="[cdsChartError]" /></div>
+  }
+  @case ('empty') {
+    <div class="cds-chart__state">
+      <ng-content select="[cdsChartEmpty]">
+        <cds-empty-state icon="ph ph-chart-bar" [title]="emptyTitle()" [message]="emptyMessage()" size="sm" />
+      </ng-content>
+    </div>
+  }
+  @default {
+    <div class="cds-chart__canvas" role="img" [attr.aria-label]="ariaLabel()" [attr.aria-describedby]="id + '-data'">
+      <apx-chart
+        [chart]="options()!.chart!"
+        [series]="options()!.series!"
+        [colors]="options()!.colors!"
+        [xaxis]="options()!.xaxis!"
+        [yaxis]="options()!.yaxis!"
+        [legend]="options()!.legend!"
+        [dataLabels]="options()!.dataLabels!"
+        [grid]="options()!.grid!"
+        [stroke]="options()!.stroke!"
+        [fill]="options()!.fill!"
+        [plotOptions]="options()!.plotOptions!"
+        [labels]="options()!.labels!"
+      />
+    </div>
+    <div class="cds-chart__data" [id]="id + '-data'">
+      @if (summary()) { <p>{{ summary() }}</p> }
+      <table>
+        <caption>{{ ariaLabel() }}</caption>
+        <thead><tr>@for (h of table().head; track $index) { <th scope="col">{{ h }}</th> }</tr></thead>
+        <tbody>
+          @for (row of table().rows; track $index) {
+            <tr>@for (cell of row; track $index) { <td>{{ cell }}</td> }</tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+}
