@@ -55,3 +55,8 @@ export * from './lib/layout/notif-bell/notif-bell.component';
 export * from './lib/lead-progress-tag/lead-progress-tag.component';
 export * from './lib/lead-temperature/lead-temperature.component';
 export * from './lib/pipeline-switcher/pipeline-switcher.component';
+
+// Charting (wraps ng-apexcharts; presentational)
+export * from './lib/chart/chart.component';
+export * from './lib/chart/chart.types';
+export { funnelStages } from './lib/chart/chart-options';
