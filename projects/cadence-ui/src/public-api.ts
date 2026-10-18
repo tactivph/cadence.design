@@ -55,3 +55,5 @@ export * from './lib/layout/notif-bell/notif-bell.component';
 export * from './lib/lead-progress-tag/lead-progress-tag.component';
 export * from './lib/lead-temperature/lead-temperature.component';
 export * from './lib/pipeline-switcher/pipeline-switcher.component';
+export * from './lib/calendar/calendar-grid';
+export * from './lib/calendar/calendar.component';

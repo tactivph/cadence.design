@@ -1,0 +1,56 @@
+<div class="cds-calendar">
+  <div class="cds-calendar__header">
+    <span class="cds-calendar__title" aria-live="polite">{{ monthLabel() }}</span>
+    <div class="cds-calendar__controls">
+      <button cds-button variant="secondary-neutral" size="sm" [iconOnly]="true" iconLeft="ph ph-caret-left"
+              type="button" aria-label="Previous month" (click)="previous()"></button>
+      <button cds-button variant="secondary-neutral" size="sm" type="button" (click)="goToToday()">Today</button>
+      <button cds-button variant="secondary-neutral" size="sm" [iconOnly]="true" iconLeft="ph ph-caret-right"
+              type="button" aria-label="Next month" (click)="next()"></button>
+    </div>
+  </div>
+
+  <div class="cds-calendar__grid" role="grid" [attr.aria-label]="monthLabel()" [attr.aria-busy]="loading || null">
+    <div class="cds-calendar__row" role="row">
+      @for (day of weekdays; track day) {
+        <div class="cds-calendar__weekday" role="columnheader">{{ day }}</div>
+      }
+    </div>
+    @if (loading) {
+      <div class="cds-calendar__body">
+        @for (i of skeletonCells; track i) {
+          <div class="cds-calendar__cell cds-calendar__cell--loading">
+            <cds-skeleton width="100%" height="100%" radius="var(--cds-radius-sm)"></cds-skeleton>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="cds-calendar__body">
+        @for (cell of cells(); track cell.key) {
+          @if (cell.inMonth) {
+            <button type="button" role="gridcell" class="cds-calendar__cell"
+                    [class.cds-calendar__cell--today]="cell.today"
+                    [class.cds-calendar__cell--selected]="cell.selected"
+                    [attr.data-date]="cell.key" [attr.aria-label]="cell.label"
+                    [attr.aria-selected]="cell.selected" [attr.aria-current]="cell.today ? 'date' : null"
+                    [attr.tabindex]="cell.tabbable ? 0 : -1"
+                    (click)="select(cell)" (keydown)="onKeydown($event, cell)">
+              <span class="cds-calendar__numeral">{{ cell.day }}</span>
+              @if (cell.markers.length) {
+                <span class="cds-calendar__markers" aria-hidden="true">
+                  @for (m of cell.markers; track $index) {
+                    <span class="cds-calendar__dot" [class]="'cds-calendar__dot cds-calendar__dot--' + m"></span>
+                  }
+                </span>
+              }
+            </button>
+          } @else {
+            <div role="gridcell" class="cds-calendar__cell cds-calendar__cell--outside" aria-disabled="true">
+              <span class="cds-calendar__numeral">{{ cell.day }}</span>
+            </div>
+          }
+        }
+      </div>
+    }
+  </div>
+</div>
